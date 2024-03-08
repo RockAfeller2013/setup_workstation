@@ -30,5 +30,6 @@ choco install foxitreader --force -y
 C:\BGInfo\Bginfo.exe /silent /accepteula /nolicprompt /timer:00 BGconfig.bgi
 
 sc config wuauserv start= disabled
+Set-MpPreference -DisableRealtimeMonitoring $false
 
 
