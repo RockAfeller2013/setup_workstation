@@ -37,5 +37,7 @@ slmgr.vbs /ipk <your_product_key>
 slmgr.vbs /ato
 slmgr.vbs /dlv
 
+https://github.com/chocolatey/chocolatey-environments/blob/master/scripts/PrepareWindows.ps1
+
 
 
