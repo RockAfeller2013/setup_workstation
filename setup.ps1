@@ -17,6 +17,9 @@ sc config "wuauserv" start=disabled
 @echo Finished ....
 pause
 
+# God Mode
+https://answers.microsoft.com/en-us/insider/forum/all/god-mode-other-windows-10-tips-tricks/9e81e023-9179-4b59-9937-f1e9aab537b4
+
 # Disable firewall
 netsh advfirewall set allprofiles state off
 
