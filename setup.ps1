@@ -34,7 +34,7 @@ choco install thunderbird --force -y
 choco install mremoteng --force -y
 choco install putty --force -y
 choco install filezilla --force -y
-
+choco install winscp --force -y
 
 "C:\ProgramData\chocolatey\bin\Bginfo64.exe /timer:0 /silent /nolicprompt /accepteula /ALL"
 
