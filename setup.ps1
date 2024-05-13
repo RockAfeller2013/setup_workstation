@@ -2,7 +2,12 @@ Create Desktop folder GodMode.{ED7BA470-8E54-465E-825C-99712043E01C}
 Choco install
 https://gist.github.com/hotoo/452523
 
-change computer name
+# change computer name
+# setup hostname
+# setup IP
+# setup NTP/timezone
+# setup DNS
+
 Disable updates / SCONFIG and set updates to Manual
 
 shell:startup
