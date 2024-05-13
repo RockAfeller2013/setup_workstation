@@ -28,6 +28,13 @@ choco install googlechrome --ignore-checksums --force -y
 choco install bginfo --force -y
 choco install 7zip.install --force -y
 choco install foxitreader --force -y
+choco install postman --force -y
+choco install insomnia-rest-api-client --force -y
+choco install thunderbird --force -y
+choco install mremoteng --force -y
+choco choco install putty --force -y
+choco filezilla --force -y
+
 
 "C:\ProgramData\chocolatey\bin\Bginfo64.exe /timer:0 /silent /nolicprompt /accepteula /ALL"
 
