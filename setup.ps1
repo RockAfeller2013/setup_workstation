@@ -41,6 +41,7 @@ choco install putty --force -y
 choco install filezilla --force -y
 choco install winscp --force -y
 choco install vlc --force -y
+choco install monosnap --force -y
 
 "C:\ProgramData\chocolatey\bin\Bginfo64.exe /timer:0 /silent /nolicprompt /accepteula /ALL"
 
