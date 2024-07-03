@@ -56,5 +56,7 @@ slmgr.vbs /dlv
 
 https://github.com/chocolatey/chocolatey-environments/blob/master/scripts/PrepareWindows.ps1
 
+https://github.com/memstechtips/UnattendedWinstall
+
 
 
