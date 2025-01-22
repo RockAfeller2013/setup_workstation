@@ -25,6 +25,9 @@ pause
 # God Mode
 https://answers.microsoft.com/en-us/insider/forum/all/god-mode-other-windows-10-tips-tricks/9e81e023-9179-4b59-9937-f1e9aab537b4
 
+# Create reboot icons
+
+
 # Disable firewall
 netsh advfirewall set allprofiles state off
 
@@ -44,6 +47,8 @@ choco install vlc --force -y
 choco install monosnap --force -y
 
 "C:\ProgramData\chocolatey\bin\Bginfo64.exe /timer:0 /silent /nolicprompt /accepteula /ALL"
+
+# Setup BGINFO
 
 C:\BGInfo\Bginfo.exe /silent /accepteula /nolicprompt /timer:00 BGconfig.bgi
 
