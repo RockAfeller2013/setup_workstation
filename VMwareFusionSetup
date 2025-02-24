@@ -10,7 +10,6 @@ vagrant plugin install vagrant-vmware-desktop
 vagrant --version
 vmware-installer --version ?
 
-
 brew install hashicorp/tap/packer
 
 
@@ -137,7 +136,10 @@ Description: "Windows 11 box for VMware Fusion"
 Provider: vmware_desktop
 Click Create Box
 
+----
+Vagrantfile 
 
+ config.vm.communicator = "winrm" # Required for Windows VMs
 ----
 #!/bin/bash
 
@@ -188,6 +190,9 @@ slmgr /ipk $WIN_LICENSE_KEY
 slmgr /skms kms8.msguides.com
 slmgr /ato
 echo Activation complete.
+winrm quickconfig
+winrm set winrm/config/service @{AllowUnencrypted="true"}
+winrm set winrm/config/service/auth @{Basic="true"}
 EOL
 
 # Ensure the Windows 11 ISO exists
@@ -215,6 +220,9 @@ slmgr /xpr
 
 ------
 
+
+------
+
 Windows Images  - https://github.com/joefitzgerald/packer-windows
 
 ------
@@ -222,6 +230,34 @@ Build Images
 
 https://github.com/joefitzgerald/packer-windows
 https://github.com/rgl/windows-vagrant
+
+mkdir ~/vagrant-win11 && cd ~/vagrant-win11
+vagrant init windows-11
+vagrant up --provider=vmware_desktop
+vagrant rdp
+
+vagrant package --base "Windows 11" --output windows11.box
+vagrant cloud publish USERNAME/windows-11 1.0.0 vmware_desktop windows11.box --release --description "Windows 11 Box for VMware Fusion"
+
+packer init .
+packer build windows11.pkr.hcl
+vagrant box add windows-11 windows11.box
+
+
+Vagrant.configure("2") do |config|
+  config.vm.box = "windows-11"
+  config.vm.communicator = "winrm"
+
+  config.vm.provider "vmware_desktop" do |v|
+    v.gui = true
+    v.vmx["memsize"] = "8192"
+    v.vmx["numvcpus"] = "4"
+  end
+end
+
+
+vagrant up --provider=vmware_desktop
+vagrant rdp
 
 
 
