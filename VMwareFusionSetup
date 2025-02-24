@@ -1,8 +1,13 @@
 ## How to install Vagrant on VMware Fusion MacOSX
 
+# Install Homebrew if not already installed
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+d)
+
 brew tap hashicorp/tap
 brew install hashicorp/tap/hashicorp-vagrant
 
+brew install --cask vmware-fusion
 brew install --cask vagrant
 brew install --cask vagrant-manager
 brew install --cask vagrant-vmware-utility
@@ -13,31 +18,14 @@ vmware-installer --version ?
 brew install hashicorp/tap/packer
 
 
+vagrant --version
 vagrant box add precise64 https://vagrantcloud.com/hashicorp/boxes/precise64/versions/1.1.0/providers/virtualbox.box
 vagrant init precise64
 vagrant up
 vagrant halt
 vagrant ssh
+vagrant rdp
 
-
-# Install Homebrew if not already installed
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-# Install Vagrant
-brew install --cask vagrant
-
-# Install VMware Fusion (replace 'pro' with 'standard' if needed)
-brew install --cask vmware-fusion
-
-# Install Vagrant VMware Utility
-brew install --cask vagrant-vmware-utility
-
-# Install Vagrant VMware Plugin
-vagrant plugin install vagrant-vmware-desktop
-
-# Verify installation
-vagrant --version
-vmware-installer --version
 
 #--
 Build Windows 11 Machine
