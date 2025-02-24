@@ -217,6 +217,12 @@ slmgr /xpr
 
 Windows Images  - https://github.com/joefitzgerald/packer-windows
 
+------
+Build Images
+
+https://github.com/joefitzgerald/packer-windows
+https://github.com/rgl/windows-vagrant
+
 
 
 
