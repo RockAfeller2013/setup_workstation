@@ -11,6 +11,9 @@ vagrant --version
 vmware-installer --version ?
 
 
+brew install hashicorp/tap/packer
+
+
 vagrant box add precise64 https://vagrantcloud.com/hashicorp/boxes/precise64/versions/1.1.0/providers/virtualbox.box
 vagrant init precise64
 vagrant up
@@ -209,6 +212,10 @@ cd ~/vagrant-win11
 vagrant up --provider=vmware_desktop
 slmgr /xpr
 
+
+------
+
+Windows Images  - https://github.com/joefitzgerald/packer-windows
 
 
 
