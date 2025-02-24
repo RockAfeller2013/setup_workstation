@@ -135,6 +135,82 @@ Provider: vmware_desktop
 Click Create Box
 
 
+----
+#!/bin/bash
+
+# Set up directories
+mkdir -p ~/vagrant-win11
+cd ~/vagrant-win11
+
+# Ensure Homebrew is installed
+if ! command -v brew &> /dev/null; then
+    echo "Installing Homebrew..."
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
+
+# Install Vagrant and VMware Fusion
+brew install --cask vagrant vmware-fusion
+brew install --cask vagrant-vmware-utility
+vagrant plugin install vagrant-vmware-desktop
+
+# Ask for the Windows license key
+read -p "Enter your Windows 11 license key: " WIN_LICENSE_KEY
+
+# Create Vagrantfile with GUI enabled
+cat > Vagrantfile <<EOL
+Vagrant.configure("2") do |config|
+  config.vm.box = "windows-11-custom"
+  config.vm.communicator = "winrm" # Enables Windows communication
+
+  config.vm.provider "vmware_desktop" do |v|
+    v.gui = true  # Enable GUI mode
+    v.vmx["memsize"] = "8192"
+    v.vmx["numvcpus"] = "4"
+    v.vmx["firmware"] = "efi"
+    v.vmx["vhv.enable"] = "TRUE"
+    v.vmx["ethernet0.virtualDev"] = "vmxnet3"
+    v.vmx["bios.bootOrder"] = "hdd,cdrom"  # Ensure it boots properly
+  end
+
+  # Provision script to activate Windows
+  config.vm.provision "shell", path: "activate_windows.bat"
+end
+EOL
+
+# Create the Windows activation script
+cat > activate_windows.bat <<EOL
+@echo off
+echo Activating Windows...
+slmgr /ipk $WIN_LICENSE_KEY
+slmgr /skms kms8.msguides.com
+slmgr /ato
+echo Activation complete.
+EOL
+
+# Ensure the Windows 11 ISO exists
+ISO_PATH=~/vagrant-win11/windows11.iso
+if [ ! -f "$ISO_PATH" ]; then
+    echo "ERROR: Windows 11 ISO not found at $ISO_PATH"
+    echo "Download it from Microsoft and place it in ~/vagrant-win11/windows11.iso"
+    exit 1
+fi
+
+echo "Windows 11 Vagrant environment setup complete."
+echo "Run 'vagrant up --provider=vmware_desktop' to start the VM with GUI."
+
+
+----
+
+chmod +x setup_win11_vm.sh
+./setup_win11_vm.sh
+
+
+cd ~/vagrant-win11
+vagrant up --provider=vmware_desktop
+slmgr /xpr
+
+
+
 
 
 
