@@ -1,0 +1,19 @@
+Vagrant.configure("2") do |config|
+  config.vm.box = "generic/windows11" # Use an existing box or create one
+  config.vm.box = "windows-11-custom"
+  config.vm.communicator = "winrm" # Required for Windows VMs
+  config.vm.provider "vmware_desktop" do |v|
+    v.gui = true
+    v.vmx["memsize"] = "8192"
+    v.vmx["numvcpus"] = "4"
+    v.vmx["firmware"] = "efi"
+    v.vmx["vhv.enable"] = "TRUE"
+    v.vmx["ethernet0.virtualDev"] = "vmxnet3"
+    v.vmx["bios.bootOrder"] = "hdd,cdrom"  # Ensure it boots properly
+  end
+
+  # Provision script to activate Windows
+  config.vm.provision "shell", path: "activate_windows.bat"
+
+end
+
