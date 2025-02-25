@@ -1,19 +1,38 @@
 Vagrant.configure("2") do |config|
-  config.vm.box = "generic/windows11" # Use an existing box or create one
-  config.vm.box = "windows-11-custom"
-  config.vm.communicator = "winrm" # Required for Windows VMs
+  # Use an existing box
+  config.vm.box = "generic/windows11"
+
+  # Set the hostname
+  config.vm.hostname = "myhostname"
+
+  # Configure private network with a static IP
+  config.vm.network :private_network, ip: "192.168.193.141"
+
+  # Enable WinRM for Windows communication
+  config.vm.communicator = "winrm"
+
+  # VMware provider configuration
   config.vm.provider "vmware_desktop" do |v|
     v.gui = true
-    v.vmx["memsize"] = "8192"
-    v.vmx["numvcpus"] = "4"
-    v.vmx["firmware"] = "efi"
-    v.vmx["vhv.enable"] = "TRUE"
-    v.vmx["ethernet0.virtualDev"] = "vmxnet3"
-    v.vmx["bios.bootOrder"] = "hdd,cdrom"  # Ensure it boots properly
+    v.vmx["memsize"] = "8192"  # Allocate 8GB of RAM
+    v.vmx["numvcpus"] = "4"    # Allocate 4 CPUs
+    v.vmx["firmware"] = "efi"  # Use EFI firmware
+    v.vmx["vhv.enable"] = "TRUE"  # Enable Hyper-V support
+    v.vmx["ethernet0.virtualDev"] = "vmxnet3"  # Use vmxnet3 network adapter
+    v.vmx["bios.bootOrder"] = "hdd,cdrom"  # Ensure proper boot order
   end
+
+  # Provisioning script for Windows
+  config.vm.provision "shell", inline: <<-SHELL
+    # Configure NTP settings
+    w32tm /config /syncfromflags:manual /manualpeerlist:"ntp_server_address" /reliable:YES /update
+    w32tm /resync
+    w32tm /query /status
+
+    # Add host entry
+    echo "192.168.193.141     myhostname myhostname.local" | Out-File -FilePath 'C:\\Windows\\System32\\drivers\\etc\\hosts' -Append
+  SHELL
 
   # Provision script to activate Windows
   config.vm.provision "shell", path: "activate_windows.bat"
-
 end
-
