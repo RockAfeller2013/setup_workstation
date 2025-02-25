@@ -12,6 +12,8 @@ brew install --cask vagrant
 brew install --cask vagrant-manager
 brew install --cask vagrant-vmware-utility
 vagrant plugin install vagrant-vmware-desktop
+vagrant plugin list
+
 vagrant --version
 vmware-installer --version ?
 
@@ -21,7 +23,7 @@ brew install hashicorp/tap/packer
 vagrant --version
 vagrant box add precise64 https://vagrantcloud.com/hashicorp/boxes/precise64/versions/1.1.0/providers/virtualbox.box
 vagrant init precise64
-vagrant up
+vagrant up --debug
 vagrant halt
 vagrant ssh
 vagrant rdp
