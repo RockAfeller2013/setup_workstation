@@ -16,5 +16,7 @@ net localgroup Administrators vagrant /add
 
 reg add HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v EnableLUA /t REG_DWORD /d 0 /f
 
+https://privacy.sexy/
+
 shutdown /s /t 0
 
