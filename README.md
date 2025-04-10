@@ -1,5 +1,20 @@
 https://github.com/memstechtips/Winhance
 
+Disable automatic Updates
+Set Static IP
+Disable Firewall
+Set NTP Server
+Set Timezone
+Set Autologin
+Configure Hostname
+Disable IPV6
+
+Copy config files to machine.
+Install Cholaltecy 
+Install Startup, Bginfo
+Install Apps via Ansible
+Echo configuration
+
 
 ## Windows 11 Shenanigans
 
