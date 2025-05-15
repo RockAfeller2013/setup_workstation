@@ -1,5 +1,8 @@
 https://github.com/memstechtips/Winhance
 
+https://gist.github.com/rounk-ctrl/e76cc8c969747b605a5f2c9769bf9a5b
+https://privacy.sexy/
+
 Disable automatic Updates
 Set Static IP
 Disable Firewall
