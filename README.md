@@ -29,3 +29,6 @@ https://learn.microsoft.com/en-us/windows-hardware/customize/desktop/unattend/mi
 Here's my configuration I've been using for years:
 https://github.com/ruslanbay/immutable-windows/blob/main/README.md
 https://github.com/ruslanbay/immutable-windows/blob/main/README.md?plain=1#L943
+https://ninite.com/
+https://rufus.ie/en/
+https://schneegans.de/windows/unattend-generator/
