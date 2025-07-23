@@ -32,3 +32,7 @@ https://github.com/ruslanbay/immutable-windows/blob/main/README.md?plain=1#L943
 https://ninite.com/
 https://rufus.ie/en/
 https://schneegans.de/windows/unattend-generator/
+
+## Disable Defender
+
+https://github.com/es3n1n/defendnot
