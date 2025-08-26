@@ -1,5 +1,7 @@
 - https://github.com/memstechtips/Winhance
 - https://gist.github.com/rounk-ctrl/e76cc8c969747b605a5f2c9769bf9a5b
+- https://github.com/rounk-ctrl?tab=repositories
+- https://windhawk.net/mods
 - https://privacy.sexy/
 - https://github.com/es3n1n/defendnot
 
