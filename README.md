@@ -36,3 +36,5 @@ https://schneegans.de/windows/unattend-generator/
 ## Disable Defender
 
 https://github.com/es3n1n/defendnot
+
+https://privacy.sexy/
