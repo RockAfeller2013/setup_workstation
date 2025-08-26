@@ -1,14 +1,40 @@
-Create Desktop folder GodMode.{ED7BA470-8E54-465E-825C-99712043E01C}
-Choco install
-https://gist.github.com/hotoo/452523
-
 # change computer name
 # setup hostname
 # setup IP
 # setup NTP/timezone
 # setup DNS
+# Disable IPV6
+#Disable Defender
+#Disable IPV6
+#Chrome as default
+#Disable Updates
+#slmgr /dlv
+#slmgr /ipk [licnese key]
+#slmgr /ato
 
-Disable updates / SCONFIG and set updates to Manual
+#slmgr /skms kms8.msguides.com
+#DISM /online /Set-Edition:Enterprise /ProductKey:XX /AcceptEula
+
+
+# Create Desktop folder GodMode.{ED7BA470-8E54-465E-825C-99712043E01C}
+
+$Desktop = [Environment]::GetFolderPath("Desktop")
+$GodMode = Join-Path $Desktop "GodMode.{ED7BA470-8E54-465E-825C-99712043E01C}"
+New-Item -Path $GodMode -ItemType Directory
+
+
+# Choco install
+
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1')); choco upgrade chocolatey -y
+
+# CMD Here
+# https://gist.github.com/hotoo/452523
+
+New-Item -Path "HKCR:\*\shell\cmdhere" -Force | Out-Null; Set-ItemProperty -Path "HKCR:\*\shell\cmdhere" -Name "(default)" -Value "Cmd&Here"; New-Item -Path "HKCR:\*\shell\cmdhere\command" -Force | Out-Null; Set-ItemProperty -Path "HKCR:\*\shell\cmdhere\command" -Name "(default)" -Value "cmd.exe /c start cmd.exe /k pushd `"%L\\..`""
+
+
+
+# Disable updates / SCONFIG and set updates to Manual
 
 shell:startup
 @Echo Stopping the Windows Update Service ...
