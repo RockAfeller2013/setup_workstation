@@ -46,6 +46,7 @@ wsl --install
 
 # Install Apps
 
+choco install classic-shell -force -y
 choco install googlechrome --ignore-checksums --force -y
 choco install bginfo --force -y
 choco install 7zip.install --force -y
