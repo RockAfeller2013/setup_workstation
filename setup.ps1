@@ -71,6 +71,7 @@ choco install docker-desktop --force -y
 choco install cmder --force -y
 choco install vscode-insiders --force -y
 choco install jetbrains-toolbox --force -y
+choco install neovim --force -y
 
 choco install curl --force -y
 choco install wget --force -y
