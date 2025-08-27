@@ -91,6 +91,18 @@ choco install kubernetes-cli --force -y
 choco install gcp-cli --force -y
 choco install docker-desktop --force -y
 
+choco install x64dbg.portable --force -y
+choco install ollydbg --force -y
+
+choco install cursoride --force -y
+choco install nvidia-broadcast --force -y
+choco install claude --force -y
+choco install warp-terminal --force -y
+choco install windsurf --force -y
+choco install pycharm-community --force -y
+choco install pycharm-edu --force -y
+choco install pycharm --force -y
+
 
 # Setup BGINFO
 
