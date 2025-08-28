@@ -23,6 +23,13 @@
 - https://rufus.ie/en/
 - https://schneegans.de/windows/unattend-generator/
 
+-Claude Code
+Gemni
+LM Studio (AUR)
+Ollama
+Crush
+Opencode
+
 
 
 
