@@ -121,6 +121,7 @@ DISM /online /Set-Edition:Enterprise /ProductKey:XX /AcceptEula
 # Disable Defender
 Stop-Service WinDefend -Force; Set-Service WinDefend -StartupType Disabled; Set-MpPreference -DisableRealtimeMonitoring $true; New-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows Defender" -Name "DisableAntiSpyware" -Value 1 -PropertyType DWord -Force; New-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows Defender\UX Configuration" -Name "NotificationDisabled" -Value 1 -PropertyType DWord -Force; New-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer" -Name "HideSCAHealth" -Value 1 -PropertyType DWord -Force; Write-Output "Microsoft Defender disabled, notifications hidden, icon removed from taskbar."
 
+# Download and Run https://winhance.net/ Manualy 
 
 https://github.com/chocolatey/chocolatey-environments/blob/master/scripts/PrepareWindows.ps1
 https://github.com/memstechtips/UnattendedWinstall
