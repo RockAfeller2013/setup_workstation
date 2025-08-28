@@ -3,10 +3,11 @@
 - Windhawk Mods https://github.com/rounk-ctrl/windhawk-mods - done
 - https://windhawk.net/mods - done
 - https://privacy.sexy/ - done
+- https://github.com/chocolatey/chocolatey-environments/blob/master/scripts/PrepareWindows.ps1 - done
+
+- https://github.com/memstechtips/UnattendedWinstall
 - https://github.com/es3n1n/defendnot
 - https://ramensoftware.com/
-- https://github.com/chocolatey/chocolatey-environments/blob/master/scripts/PrepareWindows.ps1
-- https://github.com/memstechtips/UnattendedWinstall
 
 
 
@@ -16,21 +17,20 @@
 
 ### Just use Unattended Windows Setup to automate the entire process:
 - https://learn.microsoft.com/en-us/windows-hardware/customize/desktop/unattend/microsoft-windows-shell-setup-useraccounts-localaccounts
-
+- https://github.com/ruslanbay/immutable-windows/blob/main/README.md - no
+- https://schneegans.de/windows/unattend-generator/
+- 
 ### Here's my configuration I've been using for years:
 
-- https://github.com/ruslanbay/immutable-windows/blob/main/README.md
-- https://github.com/ruslanbay/immutable-windows/blob/main/README.md?plain=1#L943
-- https://ninite.com/
-- https://rufus.ie/en/
-- https://schneegans.de/windows/unattend-generator/
 
+
+ 
 -Claude Code
-Gemni
-LM Studio (AUR)
-Ollama
-Crush
-Opencode
+- Gemni
+- LM Studio (AUR)
+- Ollama
+- Crush
+- Opencode
 
 
 
