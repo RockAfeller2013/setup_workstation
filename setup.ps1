@@ -123,7 +123,9 @@ Stop-Service WinDefend -Force; Set-Service WinDefend -StartupType Disabled; Set-
 
 # Download and Run https://winhance.net/ Manualy 
 # Download and Run https://windhawk.net/mods
-https://github.com/chocolatey/chocolatey-environments/blob/master/scripts/PrepareWindows.ps1
-https://github.com/memstechtips/UnattendedWinstall
+# Select all and download and run -https://privacy.sexy/
+
+
+
 
 
