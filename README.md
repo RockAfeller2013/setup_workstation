@@ -2,9 +2,11 @@
 - https://gist.github.com/rounk-ctrl/e76cc8c969747b605a5f2c9769bf9a5b
 - Windhawk Mods https://github.com/rounk-ctrl/windhawk-mods - done
 - https://windhawk.net/mods - done
-- https://privacy.sexy/
+- https://privacy.sexy/ - done
 - https://github.com/es3n1n/defendnot
 - https://ramensoftware.com/
+- https://github.com/chocolatey/chocolatey-environments/blob/master/scripts/PrepareWindows.ps1
+- https://github.com/memstechtips/UnattendedWinstall
 
 
 
