@@ -59,10 +59,23 @@ foreach ($app in $apps) {
 }
 
 # --- Configure BGINFO (Download custom config manually if needed) ---
-$bgPath = "C:\ProgramData\chocolatey\bin\Bginfo64.exe"
-if (Test-Path $bgPath) {
-    & $bgPath "C:\vagrant\shell\bginfo.bgi" /accepteula /silent /timer:0
+# --- Configure BGINFO ---
+$bgExe   = "C:\ProgramData\chocolatey\bin\Bginfo64.exe"
+$bgDst   = "C:\ProgramData\bginfo.bgi"
+$bgUrl   = "https://raw.githubusercontent.com/RockAfeller2013/setup_workstation/main/bginfo.bgi"
+
+# Download bginfo.bgi if missing
+if (-not (Test-Path $bgDst)) {
+    Invoke-WebRequest -Uri $bgUrl -OutFile $bgDst -UseBasicParsing
+    Write-Output "Downloaded bginfo.bgi to $bgDst"
 }
+
+# Run BGINFO silently
+if (Test-Path $bgExe) {
+    & $bgExe $bgDst /accepteula /silent /timer:0
+    Write-Output "BGINFO applied using $bgDst"
+}
+
 
 # --- Disable Defender ---
 Stop-Service WinDefend -Force
