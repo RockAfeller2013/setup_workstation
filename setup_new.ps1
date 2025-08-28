@@ -137,3 +137,6 @@ Write-Output "System setup completed."
 #Ollama
 #Crush
 #Opencode
+
+# sysprep /generalize /mode:vm /shutdown
+# Make into Proxmox Clone
