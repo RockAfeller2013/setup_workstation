@@ -223,7 +223,7 @@ if ($osData.ProductType -eq 3) {
 # Download and Run https://winhance.net/ Manualy 
 # Download and Run https://windhawk.net/mods
 # Select all and download and run -https://privacy.sexy/
-
+# Download and install https://ninite.com/
 
 
 
