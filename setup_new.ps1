@@ -125,3 +125,15 @@ if ($os.ProductType -eq 3) {
 }
 
 Write-Output "System setup completed."
+
+# Download and Run https://winhance.net/ Manualy 
+# Download and Run https://windhawk.net/mods
+# Select all and download and run -https://privacy.sexy/
+# Download and install https://ninite.com/
+#Claude Code
+
+#Gemni
+#LM Studio (AUR)
+#Ollama
+#Crush
+#Opencode
