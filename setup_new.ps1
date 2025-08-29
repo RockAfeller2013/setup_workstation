@@ -2,6 +2,8 @@
 # Windows Workstation Setup Script
 # ============================================
 
+# powershell -NoProfile -ExecutionPolicy Bypass -Command "iex (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/RockAfeller2013/setup_workstation/main/setup.ps1')"
+
 # --- Rename Computer ---
 Rename-Computer -NewName "NEW-HOSTNAME" -Force -PassThru
 
@@ -126,12 +128,14 @@ if ($os.ProductType -eq 3) {
 
 Write-Output "System setup completed."
 
+######
+
 # Download and Run https://winhance.net/ Manualy 
 # Download and Run https://windhawk.net/mods
 # Select all and download and run -https://privacy.sexy/
 # Download and install https://ninite.com/
-#Claude Code
 
+# Claude Code
 #Gemni
 #LM Studio (AUR)
 #Ollama
