@@ -5,7 +5,7 @@
 # powershell -NoProfile -ExecutionPolicy Bypass -Command "iex (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/RockAfeller2013/setup_workstation/main/setup.ps1')"
 
 # --- Rename Computer ---
-Rename-Computer -NewName "NEW-HOSTNAME" -Force -PassThru
+Rename-Computer -NewName "WIN11" -Force -PassThru
 
 # --- Set Timezone & NTP ---
 Set-TimeZone -Name "E. Australia Standard Time"
