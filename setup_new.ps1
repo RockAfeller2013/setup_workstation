@@ -2,7 +2,7 @@
 # Windows Workstation Setup Script
 # ============================================
 
-# powershell -NoProfile -ExecutionPolicy Bypass -Command "iex (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/RockAfeller2013/setup_workstation/main/setup.ps1')"
+# # powershell -NoProfile -ExecutionPolicy Bypass -Command "iex (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/RockAfeller2013/setup_workstation/main/setup_new.ps1')"
 
 # --- Rename Computer ---
 Rename-Computer -NewName "WIN11" -Force -PassThru
@@ -127,6 +127,15 @@ if ($os.ProductType -eq 3) {
 }
 
 Write-Output "System setup completed."
+
+# Setup Product Key
+#slmgr.vbs /ipk <your_product_key>
+#slmgr.vbs /ato
+#slmgr.vbs /dlv
+#slmgr /dlv
+#slmgr /skms kms8.msguides.com
+#DISM /online /Set-Edition:Enterprise /ProductKey:XX /AcceptEula
+
 
 ######
 
