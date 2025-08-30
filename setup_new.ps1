@@ -125,6 +125,87 @@ $os = Get-CimInstance -ClassName Win32_OperatingSystem
 if ($os.ProductType -eq 3) {
     Get-ScheduledTask -TaskName 'ServerManager' | Disable-ScheduledTask
 }
+# Disable Services
+
+# Bare-bones Windows 11 Optimization Script
+# WARNING: This will disable updates, security features, and system components.
+# Run in PowerShell as Administrator
+
+$services = @(
+    # Updates and Store
+    "wuauserv",         # Windows Update
+    "UsoSvc",           # Update Orchestrator
+    "WaaSMedicSvc",     # Windows Update Medic
+    "DoSvc",            # Delivery Optimization
+    "BITS",             # Background Intelligent Transfer
+    "InstallService",   # Microsoft Store
+
+    # Security / Defender
+    "WdNisSvc",         # Windows Defender Antivirus Network Inspection
+    "WinDefend",        # Windows Defender Antivirus
+    "SecurityHealthService", # Security Center
+
+    # Telemetry and Diagnostics
+    "DiagTrack",        # Connected User Experiences and Telemetry
+    "dmwappushservice", # WAP Push Service
+    "diagnosticshub.standardcollector.service",
+    "WerSvc",           # Windows Error Reporting
+    "RemoteRegistry",
+
+    # Cloud and Cortana
+    "OneSyncSvc",       # Sync Host
+    "OneDrive",         # OneDrive
+    "PimIndexMaintenanceSvc", # Contact Data
+    "CDPSvc",           # Connected Devices Platform
+    "CDPUserSvc",
+    "RetailDemo",
+
+    # Network / Sharing
+    "SharedAccess",     # Internet Connection Sharing
+    "HomeGroupListener",
+    "HomeGroupProvider",
+    "lfsvc",            # Geolocation
+    "RemoteAccess",     # Routing and Remote Access
+    "RemoteDesktopServices",
+    "TermService",      # Remote Desktop Services
+    "RemoteDesktopConfiguration",
+    "RemoteDesktopUserModePortRedirector",
+
+    # Printing / Bluetooth
+    "Spooler",          # Print Spooler
+    "PrintNotify",
+    "Fax",
+    "BTAGService",      # Bluetooth Audio Gateway
+    "bthserv",          # Bluetooth Support
+    "BthHFSrv",         # Bluetooth Handsfree
+
+    # Hyper-V
+    "vmms",             # Hyper-V Virtual Machine Management
+    "HvHost"            # Hyper-V Host
+)
+
+foreach ($svc in $services) {
+    Write-Output "Disabling service: $svc"
+    Stop-Service -Name $svc -ErrorAction SilentlyContinue
+    Set-Service -Name $svc -StartupType Disabled -ErrorAction SilentlyContinue
+}
+
+# Extra: Disable Scheduled Tasks related to telemetry
+$tasks = @(
+    "\Microsoft\Windows\Application Experience\ProgramDataUpdater",
+    "\Microsoft\Windows\Autochk\Proxy",
+    "\Microsoft\Windows\Customer Experience Improvement Program\Consolidator",
+    "\Microsoft\Windows\Customer Experience Improvement Program\UsbCeip",
+    "\Microsoft\Windows\DiskDiagnostic\Microsoft-Windows-DiskDiagnosticDataCollector",
+    "\Microsoft\Windows\Feedback\Siuf\DmClient",
+    "\Microsoft\Windows\Feedback\Siuf\DmClientOnScenarioDownload",
+    "\Microsoft\Windows\Windows Error Reporting\QueueReporting"
+)
+
+foreach ($task in $tasks) {
+    Write-Output "Disabling task: $task"
+    schtasks /Change /TN $task /Disable 2>$null
+}
 
 Write-Output "System setup completed."
 
