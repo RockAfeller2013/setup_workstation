@@ -8,6 +8,8 @@
 Rename-Computer -NewName "WIN11" -Force -PassThru
 
 # --- Set Timezone & NTP ---
+Set-Service -Name w32time -StartupType Automatic
+Start-Service -Name w32time
 Set-TimeZone -Name "E. Australia Standard Time"
 w32tm /config /manualpeerlist:"pool.ntp.org" /syncfromflags:manual /reliable:YES /update
 w32tm /resync
