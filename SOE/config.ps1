@@ -40,22 +40,6 @@ netsh advfirewall set allprofiles state off | Out-Null
 # --- WSL (WSL1 only; no Hyper-V) ---
 dism /online /Enable-Feature /FeatureName:Microsoft-Windows-Subsystem-Linux /All /NoRestart
 
-# --- Disable Microsoft Defender (may be limited by Tamper Protection) ---
-Set-MpPreference -DisableRealtimeMonitoring $true -ErrorAction SilentlyContinue
-New-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows Defender" -Force | Out-Null
-New-ItemProperty "HKLM:\SOFTWARE\Policies\Microsoft\Windows Defender" -Name "DisableAntiSpyware" -Value 1 -PropertyType DWord -Force | Out-Null
-New-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows Defender\UX Configuration" -Force | Out-Null
-New-ItemProperty "HKLM:\SOFTWARE\Policies\Microsoft\Windows Defender\UX Configuration" -Name "NotificationDisabled" -Value 1 -PropertyType DWord -Force | Out-Null
-Stop-Service -Name WinDefend -Force -ErrorAction SilentlyContinue
-Set-Service -Name WinDefend -StartupType Disabled -ErrorAction SilentlyContinue
-
-# --- Auto logon (set your own credentials) ---
-$User = "vagrant"
-$Pass = "vagrant"
-Set-ItemProperty "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" -Name AutoAdminLogon -Value 1
-Set-ItemProperty "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" -Name DefaultUserName -Value $User
-Set-ItemProperty "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" -Name DefaultPassword -Value $Pass
-Remove-ItemProperty "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" -Name AutoAdminLogonCount -ErrorAction SilentlyContinue
 
 # --- Explorer preferences (current user) ---
 $keyAdv = 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced'
