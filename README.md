@@ -8,6 +8,8 @@
 - https://github.com/memstechtips/UnattendedWinstall
 - https://github.com/es3n1n/defendnot
 - https://ramensoftware.com/
+- https://disable-windows-defender.github.io/
+- https://github.com/ionuttbara/windows-defender-remover
 
 
 
@@ -23,7 +25,9 @@
 ### Here's my configuration I've been using for years:
 
 
+### Dan Pollock Hosts file
 
+- https://someonewhocares.org/hosts/ipv6/
  
 -Claude Code
 - Gemni
