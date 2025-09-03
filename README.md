@@ -10,6 +10,7 @@
 - https://ramensoftware.com/
 - https://disable-windows-defender.github.io/
 - https://github.com/ionuttbara/windows-defender-remover
+- https://learn.microsoft.com/en-us/answers/questions/4101146/how-to-disable-windows-security-service-permanetly
 
 
 
