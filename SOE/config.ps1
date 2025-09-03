@@ -3,6 +3,9 @@
 # Windows 11 Bare-Bones Privacy + Performance Setup
 # ============================================
 
+# Live on the edge
+Set-ExecutionPolicy -Scope CurrentUser RemoteSigned -Force
+
 # Exit on errors
 $ErrorActionPreference = "Stop"
 
