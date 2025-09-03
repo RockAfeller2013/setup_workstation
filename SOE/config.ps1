@@ -112,4 +112,7 @@ foreach ($t in $tasks) {
     schtasks /Change /TN $t /Disable 2>$null | Out-Null
 }
 
+# --- Enable WSL ---
+wsl --install
+
 Write-Output "System setup completed. Reboot recommended."
