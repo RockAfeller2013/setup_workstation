@@ -1,4 +1,4 @@
-#Requires -RunAsAdministrator
+# Requires -RunAsAdministrator
 # ============================================
 # Windows 11 Bare-Bones Privacy + Performance Setup
 # ============================================
@@ -24,23 +24,6 @@ $desktop = [Environment]::GetFolderPath("Desktop")
 $godMode = Join-Path $desktop "GodMode.{ED7BA470-8E54-465E-825C-99712043E01C}"
 New-Item -Path $godMode -ItemType Directory -Force | Out-Null
 
-# --- Chocolatey bootstrap ---
-Set-ExecutionPolicy Bypass -Scope Process -Force
-[System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::Tls12
-Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
-choco upgrade chocolatey -y
-
-# Helper: safe Chocolatey install (skips unknown packages)
-function Install-ChocoPackage {
-    param([Parameter(Mandatory)][string]$Id)
-    $found = choco search $Id --exact --limit-output 2>$null | Select-String -Pattern "^\Q$Id\E(\||$)"
-    if ($found) {
-        Start-Process -FilePath "choco" -ArgumentList @("install",$Id,"-y","--ignore-checksums") -Wait | Out-Null
-    } else {
-        Write-Output "Skip (not found): $Id"
-    }
-}
-
 # --- “CMD here” context menu (current path) ---
 New-Item -Path "HKCR:\Directory\shell\cmdhere" -Force | Out-Null
 Set-ItemProperty -Path "HKCR:\Directory\shell\cmdhere" -Name "(default)" -Value "Cmd&Here"
@@ -56,27 +39,6 @@ netsh advfirewall set allprofiles state off | Out-Null
 
 # --- WSL (WSL1 only; no Hyper-V) ---
 dism /online /Enable-Feature /FeatureName:Microsoft-Windows-Subsystem-Linux /All /NoRestart
-
-# --- Applications via Chocolatey (robust install) ---
-$apps = @(
-  "googlechrome","7zip.install","bginfo","vlc","git","nodejs-lts","python",
-  "openjdk","docker-desktop","vscode","neovim","curl","wget","httpie",
-  "notepadplusplus","sysinternals","everything","awscli","azure-cli","kubernetes-cli",
-  "google-cloud-sdk","putty","winscp","filezilla","rufus","foxitreader","thunderbird",
-  "mremoteng","cmder","x64dbg.portable","ollydbg","powershell-core"
-)
-foreach ($app in $apps) { Install-ChocoPackage -Id $app }
-
-# --- BGINFO configure ---
-$bgExe = "C:\ProgramData\chocolatey\bin\Bginfo64.exe"
-$bgDst = "C:\ProgramData\bginfo.bgi"
-$bgUrl = "https://raw.githubusercontent.com/RockAfeller2013/setup_workstation/main/bginfo.bgi"
-if (-not (Test-Path $bgDst)) {
-    Invoke-WebRequest -Uri $bgUrl -OutFile $bgDst -UseBasicParsing
-}
-if (Test-Path $bgExe) {
-    & $bgExe $bgDst /accepteula /silent /timer:0
-}
 
 # --- Disable Microsoft Defender (may be limited by Tamper Protection) ---
 Set-MpPreference -DisableRealtimeMonitoring $true -ErrorAction SilentlyContinue
