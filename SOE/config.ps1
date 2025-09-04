@@ -11,6 +11,7 @@ $ErrorActionPreference = "Stop"
 
 # --- Computer name ---
 Rename-Computer -NewName "WIN11" -Force
+Write-Output "Renamed."
 
 # --- Timezone & NTP ---
 Set-Service -Name w32time -StartupType Automatic
@@ -18,9 +19,12 @@ Start-Service -Name w32time
 Set-TimeZone -Name "E. Australia Standard Time"
 w32tm /config /manualpeerlist:"pool.ntp.org" /syncfromflags:manual /reliable:YES /update
 w32tm /resync
+Write-Output "Set Timezone."
+
 
 # --- Disable IPv6 on all adapters ---
 Get-NetAdapterBinding -ComponentID ms_tcpip6 | Disable-NetAdapterBinding -PassThru | Out-Null
+Write-Output "Disable IPv6"
 
 # --- GodMode on Desktop ---
 $desktop = [Environment]::GetFolderPath("Desktop")
