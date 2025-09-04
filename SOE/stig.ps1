@@ -16,7 +16,7 @@ Run as Administrator. This script makes system changes. Review before running.
 #>
 
 # --- Configuration ---
-$stigUrl = "https://dl.dod.cyber.mil/wp-content/uploads/stigs/zip/U_Windows_11_STIG_V2R1_Manual-xccdf.zip"
+$stigUrl = "https://dl.dod.cyber.mil/wp-content/uploads/stigs/zip/U_MS_Windows_11_V2R4_STIG.zip"
 $temp = Join-Path $env:TEMP "Win11_STIG_$(Get-Random)"
 $zipPath = Join-Path $temp "win11_stig.zip"
 $extractPath = Join-Path $temp "extracted"
@@ -34,7 +34,7 @@ New-Item -Path $extractPath -ItemType Directory -Force | Out-Null
 
 # --- Download STIG zip ---
 Write-Output "Downloading STIG..."
-Invoke-WebRequest -Uri $stigUrl -OutFile $zipPath -UseBasicParsing
+Invoke-WebRequest -Uri $stigUrl -OutFile $zipPath
 
 # --- Extract ---
 Write-Output "Extracting..."
@@ -65,7 +65,7 @@ $commandPatterns = @(
     'reg import [^"\r\n]+',
     'secedit.exe /configure [^"\r\n]+',
     'auditpol\s+/set[^\r\n]+',
-    'wevtutil\s+sl[^\r\n]+'  # sometimes used by STIGs
+    'wevtutil\s+sl[^\r\n]+'
 )
 
 foreach ($file in $txtFiles) {
@@ -103,7 +103,6 @@ Function Apply-ConservativeAuditBaseline {
     }
 }
 
-# Check whether any auditpol commands were executed earlier by checking the extracted commands count
 $foundAuditCommands = ($txtFiles | ForEach-Object {
     (Get-Content -Raw -LiteralPath $_.FullName) -match "auditpol\s+/set"
 }) -contains $true
