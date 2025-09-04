@@ -1,24 +1,21 @@
 & "C:\Program Files\Classic Shell\ClassicStartMenu.exe" -exit
 
-
-
-# Source values from current user
-$src = "HKCU:\Software\IvoSoft"
-
-# Apply to default profile (for new users)
-$dstDefault = "HKU:\.DEFAULT\Software\IvoSoft"
-if (-not (Test-Path $dstDefault)) {
-    New-Item -Path $dstDefault -Force | Out-Null
+$keys = @{
+    "ClassicExplorer" = @{ ShowedToolbar = 1 }
+    "ClassicShell"    = @{ }  # Add values as needed
+    "ClassicStartMenu"= @{ CSettingsDlg = [byte[]](248,1,0,0) }
 }
-Copy-Item -Path $src\* -Destination $dstDefault -Recurse -Force
 
-# Apply to each existing user hive
-Get-ChildItem "HKU:\" | Where-Object { $_.Name -match '^HKEY_USERS\\S-1-5-21' } | ForEach-Object {
-    $dst = "$($_.PSPath)\Software\IvoSoft"
-    if (-not (Test-Path $dst)) {
-        New-Item -Path $dst -Force | Out-Null
+# Iterate all user SIDs
+Get-ChildItem "HKU:" | ForEach-Object {
+    $sid = $_.PSChildName
+    foreach ($key in $keys.Keys) {
+        $path = "HKU:\$sid\Software\IvoSoft\$key"
+        if (-not (Test-Path $path)) { New-Item -Path $path -Force }
+        foreach ($name in $keys[$key].Keys) {
+            New-ItemProperty -Path $path -Name $name -Value $keys[$key][$name] -PropertyType DWORD -Force
+        }
     }
-    Copy-Item -Path $src\* -Destination $dst -Recurse -Force
 }
 
 & "C:\Program Files\Classic Shell\ClassicStartMenu.exe" -settings
