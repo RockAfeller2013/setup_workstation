@@ -65,40 +65,6 @@ if (Test-Path $odSetup) { Start-Process $odSetup "/uninstall" -Wait | Out-Null }
 New-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\OneDrive" -Force | Out-Null
 New-ItemProperty "HKLM:\SOFTWARE\Policies\Microsoft\Windows\OneDrive" -Name "DisableFileSync" -Value 1 -PropertyType DWord -Force | Out-Null
 
-# --- Disable services (exact names) ---
-$svcExact = @(
-    # Updates/Store
-    "wuauserv","UsoSvc","WaaSMedicSvc","DoSvc","BITS","InstallService",
-    # Defender/Security
-    "WdNisSvc","WinDefend","SecurityHealthService",
-    # Telemetry/Diag
-    "DiagTrack","dmwappushservice","diagnosticshub.standardcollector.service","WerSvc","RemoteRegistry",
-    # Networking
-    "SharedAccess","lfsvc","RemoteAccess",
-    # RDP
-    "TermService","UmRdpService","SessionEnv",
-    # Printing/Bluetooth
-    "Spooler","PrintNotify","Fax","BTAGService","bthserv","BthHFSrv",
-    # Hyper-V/Compute
-    "vmms","HvHost","vmcompute","hns",
-    # Performance tweaks
-    "SysMain"
-)
-foreach ($s in $svcExact) {
-    Write-Output "Disabling service: $s"
-    Stop-Service -Name $s -ErrorAction SilentlyContinue
-    Set-Service -Name $s -StartupType Disabled -ErrorAction SilentlyContinue
-}
-
-# --- Disable services (wildcards for per-user services) ---
-$svcWild = @("OneSyncSvc*","PimIndexMaintenanceSvc*","CDPUserSvc*","DevicesFlowUserSvc*")
-foreach ($pattern in $svcWild) {
-    Get-Service -Name $pattern -ErrorAction SilentlyContinue | ForEach-Object {
-        Write-Output "Disabling service: $($_.Name)"
-        Stop-Service -Name $_.Name -ErrorAction SilentlyContinue
-        Set-Service -Name $_.Name -StartupType Disabled -ErrorAction SilentlyContinue
-    }
-}
 
 # --- Disable telemetry-related scheduled tasks ---
 $tasks = @(
