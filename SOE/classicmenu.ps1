@@ -19,4 +19,4 @@ Get-ChildItem "HKU:" | ForEach-Object {
 }
 
 & "C:\Program Files\Classic Shell\ClassicStartMenu.exe" -settings
-& "C:\Program Files\Classic Shell\ClassicStartMenu.exe"
+
