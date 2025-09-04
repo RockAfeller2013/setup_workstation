@@ -59,6 +59,8 @@ choco install winscp --force -y
 choco install vlc --force -y
 choco install monosnap --force -y
 choco install rufus --force -y
+choco install brave --force -y
+choco install firefox --force -y
 
 
 choco install git --force -y
