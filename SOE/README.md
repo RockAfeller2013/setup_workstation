@@ -12,3 +12,20 @@
 - Proxmox Build Script
 - NVidia passthrough
 - Tunnnel for remote access and Graphics
+
+- Download and Run https://winhance.net/ Manualy 
+- Download and Run https://windhawk.net/mods
+- Select all and download and run -https://privacy.sexy/
+- Download and install https://ninite.com/
+
+#### Manual Install
+- Claude Code
+- Gemni
+- LM Studio (AUR)
+- Ollama
+- Crush
+- Opencode
+- OpenGPT
+#### Clone
+- sysprep /generalize /mode:vm /shutdown
+- Make into Proxmox Clone
