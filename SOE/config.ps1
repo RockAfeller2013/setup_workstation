@@ -32,8 +32,6 @@ $godMode = Join-Path $desktop "GodMode.{ED7BA470-8E54-465E-825C-99712043E01C}"
 New-Item -Path $godMode -ItemType Directory -Force | Out-Null
 Write-Output "Create GodMode"
 
-
-# --- “CMD here” context menu (current path) ---
 # --- “CMD here” context menu (current path) ---
 $base = "HKLM:\SOFTWARE\Classes\Directory\shell\cmdhere"
 New-Item -Path $base -Force | Out-Null
@@ -78,7 +76,7 @@ $odSetup = Join-Path $env:SystemRoot "System32\OneDriveSetup.exe"
 if (Test-Path $odSetup) { Start-Process $odSetup "/uninstall" -Wait | Out-Null }
 New-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\OneDrive" -Force | Out-Null
 New-ItemProperty "HKLM:\SOFTWARE\Policies\Microsoft\Windows\OneDrive" -Name "DisableFileSync" -Value 1 -PropertyType DWord -Force | Out-Null
-Writehost "Disable legacy IE first run."
+Write-Out "Disable legacy IE first run."
 
 # --- Disable telemetry-related scheduled tasks ---
 $tasks = @(
@@ -94,7 +92,7 @@ $tasks = @(
 foreach ($t in $tasks) {
     schtasks /Change /TN $t /Disable 2>$null | Out-Null
 }
-Writehost "Disable Telmenty"
+Write-Out "Disable Telmenty"
 
 # Adapted from http://stackoverflow.com/a/29571064/18475
 # Get the OS Disable IE security on Windows Server via PowerShell
@@ -111,7 +109,7 @@ if (Test-Path $UserKey) {
     New-ItemProperty -Path $UserKey -Name "IsInstalled" -Value 0 -Force | Out-Null
     Write-Output "IE Enhanced Security Configuration (ESC) has been disabled for User."
 }
-Writehost "Disable IE security on Windows Server via PowerShell"
+Write-Out "Disable IE security on Windows Server via PowerShell"
 
 # http://techrena.net/disable-ie-set-up-first-run-welcome-screen/
 $key = "HKLM:\SOFTWARE\Microsoft\Internet Explorer\Main"
@@ -119,15 +117,15 @@ if (Test-Path $key) {
     New-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Internet Explorer\Main" -Name "DisableFirstRunCustomize" -Value 1 -PropertyType "DWord" -Force | Out-Null
     Write-Output "IE first run welcome screen has been disabled."
 }
-Writehost "Disable Welcome screen"
+Write-Out "Disable Welcome screen"
 
 # Ensure there is a profile file so we can get tab completion
 New-Item -ItemType Directory $(Split-Path $profile -Parent) -Force
 Set-Content -Path $profile -Encoding UTF8 -Value "" -Force
-Writehost "# Ensure there is a profile file so we can get tab completion"
+Write-Out "# Ensure there is a profile file so we can get tab completion"
 
 winrm set winrm/config/winrs '@{MaxMemoryPerShellMB="2048"}'
-Writehost "Powershell Memory"
+Write-Out "Powershell Memory"
 
 # Set Preferences
 $key = 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer'
@@ -156,7 +154,7 @@ try {
     }
 }
 catch {$global:error.RemoveAt(0)}
-Wrhitehost "Set Preferences"
+Write-Out "Set Preferences"
 
 # Enable Network Discovery and File and Print Sharing
 # Taken from here: http://win10server2016.com/enable-network-discovery-in-windows-10-creator-edition-without-using-the-netsh-command-in-powershell
@@ -179,7 +177,7 @@ if ($osData.ProductType -eq 3) {
     Write-Host 'Disabling Server Manager for starting at login.'
     Get-ScheduledTask -TaskName 'ServerManager' | Disable-ScheduledTask | Out-Null
 }
-Writehost "Disable Server message"
+Write-Out "Disable Server message"
 # --- Enable WSL ---
 wsl --install
 
