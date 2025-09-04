@@ -40,7 +40,7 @@ foreach ($app in $apps) {
 }
 
 Write-Output "Chocolatey installation completed. Log saved at $logFile"
-$>
+#>
 
 # Install Apps
 
