@@ -30,29 +30,35 @@ Write-Output "Disable IPv6"
 $desktop = [Environment]::GetFolderPath("Desktop")
 $godMode = Join-Path $desktop "GodMode.{ED7BA470-8E54-465E-825C-99712043E01C}"
 New-Item -Path $godMode -ItemType Directory -Force | Out-Null
+Write-Output "Create GodMode"
+
 
 # --- “CMD here” context menu (current path) ---
 New-Item -Path "HKCR:\Directory\shell\cmdhere" -Force | Out-Null
 Set-ItemProperty -Path "HKCR:\Directory\shell\cmdhere" -Name "(default)" -Value "Cmd&Here"
 New-Item -Path "HKCR:\Directory\shell\cmdhere\command" -Force | Out-Null
 Set-ItemProperty -Path "HKCR:\Directory\shell\cmdhere\command" -Name "(default)" -Value "cmd.exe /c start cmd.exe /k pushd `"%V`""
+Write-Output "CMD Here"
 
 # --- Disable Windows Update service (full) ---
 Stop-Service -Name wuauserv -Force -ErrorAction SilentlyContinue
 Set-Service -Name wuauserv -StartupType Disabled
+Write-Output "Disable Windows Update Service"
 
 # --- Disable Windows Firewall (all profiles) ---
 netsh advfirewall set allprofiles state off | Out-Null
+Write-Output "Disable Firewall"
 
 # --- WSL (WSL1 only; no Hyper-V) ---
 dism /online /Enable-Feature /FeatureName:Microsoft-Windows-Subsystem-Linux /All /NoRestart
-
+Write-Output "Install WSL"
 
 # --- Explorer preferences (current user) ---
 $keyAdv = 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced'
 Set-ItemProperty $keyAdv Hidden 1
 Set-ItemProperty $keyAdv HideFileExt 0
 Set-ItemProperty $keyAdv ShowSuperHidden 1
+Write-Output "Explorer preferences (current user)"
 
 # --- Disable legacy IE first run (keys may not exist on Windows 11) ---
 $AdminKey = "HKLM:\SOFTWARE\Microsoft\Active Setup\Installed Components\{A509B1A7-37EF-4b3f-8CFC-4F3A74704073}"
@@ -68,7 +74,7 @@ $odSetup = Join-Path $env:SystemRoot "System32\OneDriveSetup.exe"
 if (Test-Path $odSetup) { Start-Process $odSetup "/uninstall" -Wait | Out-Null }
 New-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\OneDrive" -Force | Out-Null
 New-ItemProperty "HKLM:\SOFTWARE\Policies\Microsoft\Windows\OneDrive" -Name "DisableFileSync" -Value 1 -PropertyType DWord -Force | Out-Null
-
+Writehost "Disable legacy IE first run."
 
 # --- Disable telemetry-related scheduled tasks ---
 $tasks = @(
@@ -84,9 +90,10 @@ $tasks = @(
 foreach ($t in $tasks) {
     schtasks /Change /TN $t /Disable 2>$null | Out-Null
 }
+Writehost "Disable Telmenty"
 
 # Adapted from http://stackoverflow.com/a/29571064/18475
-# Get the OS
+# Get the OS Disable IE security on Windows Server via PowerShell
 $osData = Get-CimInstance -ClassName Win32_OperatingSystem -ComputerName $ComputerName
 
 $AdminKey = "HKLM:\SOFTWARE\Microsoft\Active Setup\Installed Components\{A509B1A7-37EF-4b3f-8CFC-4F3A74704073}"
@@ -100,6 +107,7 @@ if (Test-Path $UserKey) {
     New-ItemProperty -Path $UserKey -Name "IsInstalled" -Value 0 -Force | Out-Null
     Write-Output "IE Enhanced Security Configuration (ESC) has been disabled for User."
 }
+Writehost "Disable IE security on Windows Server via PowerShell"
 
 # http://techrena.net/disable-ie-set-up-first-run-welcome-screen/
 $key = "HKLM:\SOFTWARE\Microsoft\Internet Explorer\Main"
@@ -107,15 +115,15 @@ if (Test-Path $key) {
     New-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Internet Explorer\Main" -Name "DisableFirstRunCustomize" -Value 1 -PropertyType "DWord" -Force | Out-Null
     Write-Output "IE first run welcome screen has been disabled."
 }
-
-Write-Output 'Setting Windows Update service to Manual startup type.'
-Set-Service -Name wuauserv -StartupType Manual
+Writehost "Disable Welcome screen"
 
 # Ensure there is a profile file so we can get tab completion
 New-Item -ItemType Directory $(Split-Path $profile -Parent) -Force
 Set-Content -Path $profile -Encoding UTF8 -Value "" -Force
+Writehost "# Ensure there is a profile file so we can get tab completion"
 
 winrm set winrm/config/winrs '@{MaxMemoryPerShellMB="2048"}'
+Writehost "Powershell Memory"
 
 # Set Preferences
 $key = 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer'
@@ -144,6 +152,7 @@ try {
     }
 }
 catch {$global:error.RemoveAt(0)}
+Wrhitehost "Set Preferences"
 
 # Enable Network Discovery and File and Print Sharing
 # Taken from here: http://win10server2016.com/enable-network-discovery-in-windows-10-creator-edition-without-using-the-netsh-command-in-powershell
@@ -159,14 +168,14 @@ Get-NetAdapter | ForEach-Object {
 
 Write-Host "Disabling IPv6"
 Get-NetAdapterBinding | Where-Object ComponentID -eq 'ms_tcpip6' | Disable-NetAdapterBinding
-
+Writehost "Enable Network Discover"
 
 # Server OS
 if ($osData.ProductType -eq 3) {
     Write-Host 'Disabling Server Manager for starting at login.'
     Get-ScheduledTask -TaskName 'ServerManager' | Disable-ScheduledTask | Out-Null
 }
-
+Writehost "Disable Server message"
 # --- Enable WSL ---
 wsl --install
 
