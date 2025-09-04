@@ -97,8 +97,6 @@ if (Test-Path $UserKey) {
     Write-Output "IE Enhanced Security Configuration (ESC) has been disabled for User."
 }
 
-#Stop-Process -Name Explorer -Force
-
 # http://techrena.net/disable-ie-set-up-first-run-welcome-screen/
 $key = "HKLM:\SOFTWARE\Microsoft\Internet Explorer\Main"
 if (Test-Path $key) {
@@ -108,8 +106,6 @@ if (Test-Path $key) {
 
 Write-Output 'Setting Windows Update service to Manual startup type.'
 Set-Service -Name wuauserv -StartupType Manual
-
-#Set-ExecutionPolicy Unrestricted
 
 # Ensure there is a profile file so we can get tab completion
 New-Item -ItemType Directory $(Split-Path $profile -Parent) -Force
