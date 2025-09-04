@@ -7,10 +7,10 @@
 
 ### Features 
 
+- Proxmox Build Script
 - Install Apps; powershell -NoProfile -ExecutionPolicy Bypass -Command "& {Invoke-Expression (Invoke-WebRequest 'https://raw.githubusercontent.com/RockAfeller2013/setup_workstation/main/SOE/ahocolatey.ps1').Content}"
 - NIST DSTIG
 - Use Licnese from MSDN Microsoft Windows 11 - Enterprise
-- Proxmox Build Script
 - NVidia passthrough
 - Tunnnel for remote access and Graphics
 
