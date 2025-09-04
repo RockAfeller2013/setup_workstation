@@ -11,11 +11,16 @@
 - Install Apps; powershell -NoProfile -ExecutionPolicy Bypass -Command "& {Invoke-Expression (Invoke-WebRequest 'https://raw.githubusercontent.com/RockAfeller2013/setup_workstation/main/SOE/ahocolatey.ps1').Content}"
 - Setup BIGINFO; powershell -NoProfile -ExecutionPolicy Bypass -Command "& {Invoke-Expression (Invoke-WebRequest 'https://raw.githubusercontent.com/RockAfeller2013/setup_workstation/refs/heads/main/SOE/bginfo.ps1').Content}"
 - Setup Classic Menu; powershell -NoProfile -ExecutionPolicy Bypass -Command "& {Invoke-Expression (Invoke-WebRequest 'https://raw.githubusercontent.com/RockAfeller2013/setup_workstation/refs/heads/main/SOE/classicmenu.ps1').Content}"
-- NIST DSTIG
 - Use Licnese from MSDN Microsoft Windows 11 - Enterprise
+- NIST DSTIG
 - NVidia passthrough
 - Tunnnel for remote access and Graphics
+- Congiurations
+- Autologin
+- Services
+- Setup ICONs
 
+## Manual Configs
 - Download and Run https://winhance.net/ Manualy 
 - Download and Run https://windhawk.net/mods
 - Select all and download and run -https://privacy.sexy/
