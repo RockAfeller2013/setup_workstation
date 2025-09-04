@@ -44,7 +44,7 @@ Write-Output "Chocolatey installation completed. Log saved at $logFile"
 
 # Install Apps
 
-choco install classic-shell -force -y
+choco install open-shell -force -y
 choco install googlechrome --ignore-checksums --force -y
 choco install bginfo --force -y
 choco install 7zip.install --force -y
