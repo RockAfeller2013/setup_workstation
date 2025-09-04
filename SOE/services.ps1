@@ -33,6 +33,49 @@ foreach ($pattern in $svcWild) {
     }
 }
 
+# Disable Xbox-related services
+Stop-Service XblAuthManager -Force
+Set-Service XblAuthManager -StartupType Disabled
+
+Stop-Service XblGameSave -Force
+Set-Service XblGameSave -StartupType Disabled
+
+Stop-Service XboxGipSvc -Force
+Set-Service XboxGipSvc -StartupType Disabled
+
+Stop-Service XboxNetApiSvc -Force
+Set-Service XboxNetApiSvc -StartupType Disabled
+
+# Disable Diagnostics / Troubleshooting if not needed
+Stop-Service diagnosticshub.standardcollector.service -Force
+Set-Service diagnosticshub.standardcollector.service -StartupType Disabled
+
+Stop-Service DiagTrack -Force
+Set-Service DiagTrack -StartupType Disabled
+
+Stop-Service TroubleshootingSvc -Force
+Set-Service TroubleshootingSvc -StartupType Disabled
+
+# Disable Remote Registry
+Stop-Service RemoteRegistry -Force
+Set-Service RemoteRegistry -StartupType Disabled
+
+# Disable Secondary features (only if unused)
+Stop-Service WMPNetworkSvc -Force
+Set-Service WMPNetworkSvc -StartupType Disabled
+
+Stop-Service PrintNotify -Force
+Set-Service PrintNotify -StartupType Disabled
+
+Stop-Service MapsBroker -Force
+Set-Service MapsBroker -StartupType Disabled
+
+Stop-Service RetailDemo -Force
+Set-Service RetailDemo -StartupType Disabled
+
+Stop-Service SharedAccess -Force
+Set-Service SharedAccess -StartupType Disabled
+
 <#
 
 Status   Name               DisplayName                           
