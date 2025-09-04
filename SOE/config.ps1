@@ -10,8 +10,8 @@ Set-ExecutionPolicy -Scope CurrentUser RemoteSigned -Force
 $ErrorActionPreference = "Stop"
 
 # --- Computer name ---
-Rename-Computer -NewName "WIN11" -Force
-Write-Output "Renamed."
+#Rename-Computer -NewName "WIN11" -Force
+#Write-Output "Renamed."
 
 # --- Timezone & NTP ---
 Set-Service -Name w32time -StartupType Automatic
