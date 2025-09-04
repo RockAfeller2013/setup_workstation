@@ -7,7 +7,7 @@ Set-ExecutionPolicy Bypass -Scope Process -Force
 Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 choco upgrade chocolatey -y
 
-
+<#
 $logFile = "C:\choco_install_log.txt"
 if (Test-Path $logFile) { Remove-Item $logFile -Force }
 
@@ -40,6 +40,7 @@ foreach ($app in $apps) {
 }
 
 Write-Output "Chocolatey installation completed. Log saved at $logFile"
+$>
 
 # Install Apps
 
