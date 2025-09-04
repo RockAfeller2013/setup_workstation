@@ -1,5 +1,5 @@
 @ "C:\Program Files\Classic Shell\ClassicStartMenu.exe" -exit
-# @ "C:\Program Files\Classic Shell\ClassicStartMenu.exe" -settings
+@ "C:\Program Files\Classic Shell\ClassicStartMenu.exe" -settings
 
 
 # Source values from current user
