@@ -76,7 +76,7 @@ $odSetup = Join-Path $env:SystemRoot "System32\OneDriveSetup.exe"
 if (Test-Path $odSetup) { Start-Process $odSetup "/uninstall" -Wait | Out-Null }
 New-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\OneDrive" -Force | Out-Null
 New-ItemProperty "HKLM:\SOFTWARE\Policies\Microsoft\Windows\OneDrive" -Name "DisableFileSync" -Value 1 -PropertyType DWord -Force | Out-Null
-Write-Out "Disable legacy IE first run."
+Write-Output "Disable legacy IE first run."
 
 # --- Disable telemetry-related scheduled tasks ---
 $tasks = @(
@@ -92,7 +92,7 @@ $tasks = @(
 foreach ($t in $tasks) {
     schtasks /Change /TN $t /Disable 2>$null | Out-Null
 }
-Write-Out "Disable Telmenty"
+Write-Output "Disable Telmenty"
 
 # Adapted from http://stackoverflow.com/a/29571064/18475
 # Get the OS Disable IE security on Windows Server via PowerShell
@@ -109,7 +109,7 @@ if (Test-Path $UserKey) {
     New-ItemProperty -Path $UserKey -Name "IsInstalled" -Value 0 -Force | Out-Null
     Write-Output "IE Enhanced Security Configuration (ESC) has been disabled for User."
 }
-Write-Out "Disable IE security on Windows Server via PowerShell"
+Write-Output "Disable IE security on Windows Server via PowerShell"
 
 # http://techrena.net/disable-ie-set-up-first-run-welcome-screen/
 $key = "HKLM:\SOFTWARE\Microsoft\Internet Explorer\Main"
@@ -117,7 +117,7 @@ if (Test-Path $key) {
     New-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Internet Explorer\Main" -Name "DisableFirstRunCustomize" -Value 1 -PropertyType "DWord" -Force | Out-Null
     Write-Output "IE first run welcome screen has been disabled."
 }
-Write-Out "Disable Welcome screen"
+Write-Output "Disable Welcome screen"
 
 # Ensure there is a profile file so we can get tab completion
 New-Item -ItemType Directory $(Split-Path $profile -Parent) -Force
@@ -125,7 +125,7 @@ Set-Content -Path $profile -Encoding UTF8 -Value "" -Force
 Write-Out "# Ensure there is a profile file so we can get tab completion"
 
 winrm set winrm/config/winrs '@{MaxMemoryPerShellMB="2048"}'
-Write-Out "Powershell Memory"
+Write-Output "Powershell Memory"
 
 # Set Preferences
 $key = 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer'
@@ -154,7 +154,7 @@ try {
     }
 }
 catch {$global:error.RemoveAt(0)}
-Write-Out "Set Preferences"
+Write-Output "Set Preferences"
 
 # Enable Network Discovery and File and Print Sharing
 # Taken from here: http://win10server2016.com/enable-network-discovery-in-windows-10-creator-edition-without-using-the-netsh-command-in-powershell
@@ -170,7 +170,7 @@ Get-NetAdapter | ForEach-Object {
 
 Write-Host "Disabling IPv6"
 Get-NetAdapterBinding | Where-Object ComponentID -eq 'ms_tcpip6' | Disable-NetAdapterBinding
-Writehost "Enable Network Discover"
+Write-Output "Enable Network Discover"
 
 # Server OS
 if ($osData.ProductType -eq 3) {
@@ -178,7 +178,6 @@ if ($osData.ProductType -eq 3) {
     Get-ScheduledTask -TaskName 'ServerManager' | Disable-ScheduledTask | Out-Null
 }
 Write-Out "Disable Server message"
-# --- Enable WSL ---
-wsl --install
+
 
 Write-Output "System setup completed. Reboot recommended."
