@@ -7,9 +7,9 @@ $svcExact = @(
     # Telemetry/Diag
     "DiagTrack","dmwappushservice","diagnosticshub.standardcollector.service","WerSvc","RemoteRegistry",
     # Networking
-    "SharedAccess","lfsvc","RemoteAccess",
+    #"SharedAccess","lfsvc","RemoteAccess",
     # RDP
-    "TermService","UmRdpService","SessionEnv",
+    #"TermService","UmRdpService","SessionEnv",
     # Printing/Bluetooth
     "Spooler","PrintNotify","Fax","BTAGService","bthserv","BthHFSrv",
     # Hyper-V/Compute
