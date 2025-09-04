@@ -1,4 +1,4 @@
-@ "C:\Program Files\Classic Shell\ClassicStartMenu.exe" -exit
+& "C:\Program Files\Classic Shell\ClassicStartMenu.exe" -exit
 
 
 
@@ -21,5 +21,5 @@ Get-ChildItem "HKU:\" | Where-Object { $_.Name -match '^HKEY_USERS\\S-1-5-21' } 
     Copy-Item -Path $src\* -Destination $dst -Recurse -Force
 }
 
-@ "C:\Program Files\Classic Shell\ClassicStartMenu.exe" -settings
-@ "C:\Program Files\Classic Shell\ClassicStartMenu.exe"
+& "C:\Program Files\Classic Shell\ClassicStartMenu.exe" -settings
+& "C:\Program Files\Classic Shell\ClassicStartMenu.exe"
