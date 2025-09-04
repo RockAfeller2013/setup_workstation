@@ -103,3 +103,5 @@ choco install windsurf --force -y
 choco install pycharm-community --force -y
 choco install pycharm-edu --force -y
 choco install pycharm --force -y
+
+## Opensource Office Apps
