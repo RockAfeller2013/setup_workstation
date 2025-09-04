@@ -105,3 +105,5 @@ choco install pycharm-edu --force -y
 choco install pycharm --force -y
 
 ## Opensource Office Apps
+
+choco install libreoffice-fresh --force -y
