@@ -34,11 +34,15 @@ Write-Output "Create GodMode"
 
 
 # --- “CMD here” context menu (current path) ---
-New-Item -Path "HKCR:\Directory\shell\cmdhere" -Force | Out-Null
-Set-ItemProperty -Path "HKCR:\Directory\shell\cmdhere" -Name "(default)" -Value "Cmd&Here"
-New-Item -Path "HKCR:\Directory\shell\cmdhere\command" -Force | Out-Null
-Set-ItemProperty -Path "HKCR:\Directory\shell\cmdhere\command" -Name "(default)" -Value "cmd.exe /c start cmd.exe /k pushd `"%V`""
+# --- “CMD here” context menu (current path) ---
+$base = "HKLM:\SOFTWARE\Classes\Directory\shell\cmdhere"
+New-Item -Path $base -Force | Out-Null
+Set-ItemProperty -Path $base -Name "(default)" -Value "Cmd&Here"
+$cmd = "$base\command"
+New-Item -Path $cmd -Force | Out-Null
+Set-ItemProperty -Path $cmd -Name "(default)" -Value 'cmd.exe /c start cmd.exe /k pushd "%V"'
 Write-Output "CMD Here"
+
 
 # --- Disable Windows Update service (full) ---
 Stop-Service -Name wuauserv -Force -ErrorAction SilentlyContinue
