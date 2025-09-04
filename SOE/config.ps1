@@ -122,7 +122,7 @@ Write-Output "Disable Welcome screen"
 # Ensure there is a profile file so we can get tab completion
 New-Item -ItemType Directory $(Split-Path $profile -Parent) -Force
 Set-Content -Path $profile -Encoding UTF8 -Value "" -Force
-Write-Out "# Ensure there is a profile file so we can get tab completion"
+Write-Output  "Ensure there is a profile file so we can get tab completion"
 
 winrm set winrm/config/winrs '@{MaxMemoryPerShellMB="2048"}'
 Write-Output "Powershell Memory"
@@ -177,7 +177,7 @@ if ($osData.ProductType -eq 3) {
     Write-Host 'Disabling Server Manager for starting at login.'
     Get-ScheduledTask -TaskName 'ServerManager' | Disable-ScheduledTask | Out-Null
 }
-Write-Out "Disable Server message"
+Write-Outpu "Disable Server message"
 
 
 Write-Output "System setup completed. Reboot recommended."
