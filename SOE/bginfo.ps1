@@ -1,3 +1,6 @@
+& "C:\ProgramData\chocolatey\bin\Bginfo64.exe"  /accepteula /silent /timer:0
+
+
 # --- BGINFO configure ---
 $bgExe = "C:\ProgramData\chocolatey\bin\Bginfo64.exe"
 $bgDst = "C:\ProgramData\bginfo.bgi"
