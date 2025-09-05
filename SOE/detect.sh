@@ -1,4 +1,7 @@
 #!/bin/bash
+# Detect Nidia Driver
+# bash -c "$(curl -fsSL https://raw.githubusercontent.com/RockAfeller2013/setup_workstation/refs/heads/main/SOE/detect.sh)"
+
 set -e
 
 # Check if NVIDIA GPU is present
