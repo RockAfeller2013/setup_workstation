@@ -39,7 +39,7 @@ Set-ItemProperty -Path $base -Name "(default)" -Value "Cmd&Here"
 $cmd = "$base\command"
 New-Item -Path $cmd -Force | Out-Null
 Set-ItemProperty -Path $cmd -Name "(default)" -Value 'cmd.exe /c start cmd.exe /k pushd "%V"'
-Write-Output "CMD Here"
+
 
 
 # --- Disable Windows Update service (full) ---
