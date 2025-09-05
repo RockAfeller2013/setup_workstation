@@ -110,8 +110,7 @@ choco install jetbrains-toolbox --force -y
 
 ## install UV
 irm https://astral.sh/uv/install.ps1 | iex
-
-
+winget install --id Microsoft.PowerToys --source winget /q
 
 ## Opensource Office Apps
 
