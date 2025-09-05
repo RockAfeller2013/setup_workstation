@@ -65,8 +65,8 @@ choco install cmder --force -y
 choco install vscode --force -y
 choco install libreoffice-fresh --force -y
 choco install gimp --force -y
-choco install nvidia-broadcast --force -y
-choco install docker-desktop --force -y
+
+
 choco install sysinternals --force -y
 choco install awscli --force -y
 choco install azure-cli --force -y
@@ -88,6 +88,8 @@ choco install wireshark --force -y
 
 
 <#
+choco install nvidia-broadcast --force -y
+choco install docker-desktop --force -y
 choco install open-shell -force -y
 choco install insomnia-rest-api-client --force -y
 choco install python --force -y
