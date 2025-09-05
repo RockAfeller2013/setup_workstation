@@ -66,8 +66,6 @@ choco install vscode --force -y
 choco install libreoffice-fresh --force -y
 choco install gimp --force -y
 
-
-choco install sysinternals --force -y
 choco install awscli --force -y
 choco install azure-cli --force -y
 choco install kubernetes-cli --force -y
@@ -111,6 +109,7 @@ choco install jetbrains-toolbox --force -y
 ## install UV
 irm https://astral.sh/uv/install.ps1 | iex
 winget install --id Microsoft.PowerToys --source winget /q
+winget install --id Microsoft.Sysinternals.Suite --exact --accept-source-agreements --accept-package-agreements
 
 ## Opensource Office Apps
 
