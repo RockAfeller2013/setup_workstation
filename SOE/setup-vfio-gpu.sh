@@ -1,5 +1,6 @@
 #!/bin/bash
 # Run this inside Proxmox to detect Nvidia and set the corresponding VM with GPU Passthrough, request Proxmox reboot.
+# bash -c "$(curl -fsSL https://raw.githubusercontent.com/RockAfeller2013/setup_workstation/refs/heads/main/SOE/setup-vfio-gpu.sh)"
 set -e
 
 VMID=1000
