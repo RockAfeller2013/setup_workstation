@@ -85,12 +85,13 @@ choco install mremoteng --force -y
 choco install thunderbird --force -y
 choco install burp-suite-free-edition --force -y
 choco install wireshark --force -y
+choco install open-shell -force -y
 
 
 <#
 choco install nvidia-broadcast --force -y
 choco install docker-desktop --force -y
-choco install open-shell -force -y
+
 choco install insomnia-rest-api-client --force -y
 choco install python --force -y
 choco install nodejs-lts --force -y
