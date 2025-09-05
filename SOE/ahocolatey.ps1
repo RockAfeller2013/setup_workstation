@@ -94,8 +94,8 @@ choco install thunderbird --force -y
 choco install gitkraken --force -y
 choco install rufus --force -y
 choco install python --force -y
-# choco install mremoteng --force -y
-# https://folge.me/features
+hoco install mremoteng --force -y
+https://folge.me/features
 choco install nodejs-lts --force -y
 choco install vscode-insiders --force -y
 choco install openjdk --force -y
@@ -103,17 +103,15 @@ choco install visualstudio2019community --force -y
 choco install neovim --force -y
 choco install notepadplusplus --force -y
 choco install powershell-core --force -y
-
 choco install f.lux --force -y
-
-
-
 choco install pycharm-community --force -y
 choco install pycharm-edu --force -y
 choco install pycharm --force -y
 choco install jetbrains-toolbox --force -y
 
 #>
+
 ## Opensource Office Apps
 
-
+# Manual Install
+# - https://folge.me/#download
