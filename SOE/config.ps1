@@ -4,7 +4,7 @@
 # ============================================
 
 # Live on the edge
-Set-ExecutionPolicy -Scope CurrentUser RemoteSigned -Force
+# Set-ExecutionPolicy -Scope CurrentUser RemoteSigned -Force
 
 # Exit on errors
 $ErrorActionPreference = "Stop"
