@@ -48,8 +48,6 @@ choco install bginfo --force -y
 choco install 7zip.install --force -y
 choco install foxitreader --force -y
 choco install postman --force -y
-choco install insomnia-rest-api-client --force -y
-choco install thunderbird --force -y
 
 choco install putty --force -y
 choco install filezilla --force -y
@@ -65,9 +63,7 @@ choco install httpie --force -y
 choco install git --force -y
 
 choco install cmder --force -y
-choco install choco install vscode --force -y
-choco install everything --force -y
-choco install nvidia-broadcast --force -y
+choco install vscode --force -y
 choco install libreoffice-fresh --force -y
 choco install gimp --force -y
 
@@ -75,6 +71,10 @@ choco install gimp --force -y
 # irm https://astral.sh/uv/install.ps1 | iex
 
 <#
+
+choco install thunderbird --force -y
+choco install insomnia-rest-api-client --force -y
+choco install nvidia-broadcast --force -y
 choco install gitkraken --force -y
 # choco install docker-desktop --force -y
 choco install rufus --force -y
