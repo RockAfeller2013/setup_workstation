@@ -71,7 +71,6 @@ choco install gimp --force -y
 # irm https://astral.sh/uv/install.ps1 | iex
 
 <#
-
 choco install nvidia-broadcast --force -y
 choco install docker-desktop --force -y
 choco install sysinternals --force -y
@@ -86,16 +85,17 @@ choco install cursoride --force -y
 choco install claude --force -y
 choco install warp-terminal --force -y
 choco install windsurf --force -y
-
-
-
-choco install insomnia-rest-api-client --force -y
-choco install thunderbird --force -y
 choco install gitkraken --force -y
 choco install rufus --force -y
-choco install python --force -y
 hoco install mremoteng --force -y
-https://folge.me/features
+choco install thunderbird --force -y
+choco install burp-suite-free-edition --force -y
+choco install wireshark --force -y
+#>
+
+<#
+choco install insomnia-rest-api-client --force -y
+choco install python --force -y
 choco install nodejs-lts --force -y
 choco install vscode-insiders --force -y
 choco install openjdk --force -y
@@ -108,7 +108,6 @@ choco install pycharm-community --force -y
 choco install pycharm-edu --force -y
 choco install pycharm --force -y
 choco install jetbrains-toolbox --force -y
-
 #>
 
 ## Opensource Office Apps
