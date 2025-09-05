@@ -1,22 +1,25 @@
-# Define the direct download URL
+# Define URLs
 $driverUrl = "https://us.download.nvidia.com/Windows/581.15/581.15-desktop-win10-win11-64bit-international-dch-whql.exe"
+$appUrl    = "https://us.download.nvidia.com/nvapp/client/11.0.5.245/NVIDIA_app_v11.0.5.245.exe"
 
-# Path to save the installer
-$installerPath = "C:\Temp\nvidia-installer.exe"
+# Define paths
+$driverPath = "C:\Temp\nvidia-driver.exe"
+$appPath    = "C:\Temp\nvidia-app.exe"
 
-# Create Temp directory if it doesn't exist
+# Ensure Temp directory exists
 if (-not (Test-Path "C:\Temp")) {
     New-Item -Path "C:\" -Name "Temp" -ItemType Directory
 }
 
-# Download the installer
-Invoke-WebRequest -Uri $driverUrl -OutFile $installerPath
+# Download and install driver
+Invoke-WebRequest -Uri $driverUrl -OutFile $driverPath
+Start-Process -FilePath $driverPath -ArgumentList "-s" -Wait
+Remove-Item -Path $driverPath
 
-# Install the driver silently
-Start-Process -FilePath $installerPath -ArgumentList "-s" -Wait
+# Download and install NVIDIA App
+Invoke-WebRequest -Uri $appUrl -OutFile $appPath
+Start-Process -FilePath $appPath -ArgumentList "-s" -Wait
+Remove-Item -Path $appPath
 
-# Cleanup
-Remove-Item -Path $installerPath
-
-# Optional: reboot after installation
+# Optional reboot
 # Restart-Computer -Force
