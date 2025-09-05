@@ -108,8 +108,19 @@ choco install jetbrains-toolbox --force -y
 
 ## install UV
 irm https://astral.sh/uv/install.ps1 | iex
+
+# Install from Windows Market Place
 winget install --id Microsoft.PowerToys --source winget /q
 winget install --id Microsoft.Sysinternals.Suite --exact --accept-source-agreements --accept-package-agreements
+
+# Install Anaconda
+
+# Download Anaconda installer
+$installer = "$env:USERPROFILE\Downloads\Anaconda3-2025.06-0-Windows-x86_64.exe"
+Invoke-WebRequest -Uri "https://repo.anaconda.com/archive/Anaconda3-2025.06-0-Windows-x86_64.exe" -OutFile $installer
+
+# Silent install
+Start-Process -FilePath $installer -ArgumentList "/S", "/InstallationType=JustMe", "/AddToPath=1", "/RegisterPython=1", "/D=C:\Anaconda3" -Wait
 
 ## Opensource Office Apps
 
