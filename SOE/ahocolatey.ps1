@@ -42,7 +42,6 @@ Write-Output "Chocolatey installation completed. Log saved at $logFile"
 
 # Install Apps
 
-choco install open-shell -force -y
 choco install googlechrome --ignore-checksums --force -y
 choco install bginfo --force -y
 choco install 7zip.install --force -y
@@ -66,11 +65,6 @@ choco install cmder --force -y
 choco install vscode --force -y
 choco install libreoffice-fresh --force -y
 choco install gimp --force -y
-
-## install UV
-# irm https://astral.sh/uv/install.ps1 | iex
-
-<#
 choco install nvidia-broadcast --force -y
 choco install docker-desktop --force -y
 choco install sysinternals --force -y
@@ -91,9 +85,10 @@ choco install mremoteng --force -y
 choco install thunderbird --force -y
 choco install burp-suite-free-edition --force -y
 choco install wireshark --force -y
-#>
+
 
 <#
+choco install open-shell -force -y
 choco install insomnia-rest-api-client --force -y
 choco install python --force -y
 choco install nodejs-lts --force -y
@@ -109,6 +104,11 @@ choco install pycharm-edu --force -y
 choco install pycharm --force -y
 choco install jetbrains-toolbox --force -y
 #>
+
+## install UV
+irm https://astral.sh/uv/install.ps1 | iex
+
+
 
 ## Opensource Office Apps
 
