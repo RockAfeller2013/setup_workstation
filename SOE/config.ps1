@@ -78,6 +78,7 @@ New-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\OneDrive" -Force | Out
 New-ItemProperty "HKLM:\SOFTWARE\Policies\Microsoft\Windows\OneDrive" -Name "DisableFileSync" -Value 1 -PropertyType DWord -Force | Out-Null
 Write-Output "Disable legacy IE first run."
 
+
 # --- Disable telemetry-related scheduled tasks ---
 $tasks = @(
     "\Microsoft\Windows\Application Experience\ProgramDataUpdater",
@@ -90,11 +91,12 @@ $tasks = @(
     "\Microsoft\Windows\Windows Error Reporting\QueueReporting"
 )
 foreach ($t in $tasks) {
-    schtasks /Query /TN $t 2>$null | Out-Null
+    cmd /c "schtasks /Query /TN `"$t`" >nul 2>&1"
     if ($LASTEXITCODE -eq 0) {
-        schtasks /Change /TN $t /Disable | Out-Null
+        cmd /c "schtasks /Change /TN `"$t`" /Disable >nul 2>&1"
     }
 }
+
 
    
 Write-Output "Disable Telmenty"
