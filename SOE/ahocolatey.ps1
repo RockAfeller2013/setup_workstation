@@ -56,18 +56,15 @@ choco install filezilla --force -y
 choco install winscp --force -y
 choco install vlc --force -y
 choco install monosnap --force -y
-choco install rufus --force -y
+
 choco install brave --force -y
 choco install firefox --force -y
 choco install curl --force -y
 choco install wget --force -y
 choco install httpie --force -y
 choco install git --force -y
-choco install gitkraken --force -y
 
 choco install cmder --force -y
-choco install docker-desktop --force -y
-
 choco install choco install vscode --force -y
 choco install everything --force -y
 choco install nvidia-broadcast --force -y
@@ -75,9 +72,12 @@ choco install libreoffice-fresh --force -y
 choco install gimp --force -y
 
 ## install UV
-irm https://astral.sh/uv/install.ps1 | iex
+# irm https://astral.sh/uv/install.ps1 | iex
 
 <#
+choco install gitkraken --force -y
+# choco install docker-desktop --force -y
+choco install rufus --force -y
 choco install python --force -y
 # choco install mremoteng --force -y
 # https://folge.me/features
