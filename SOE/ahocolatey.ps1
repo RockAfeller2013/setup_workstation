@@ -87,7 +87,7 @@ choco install warp-terminal --force -y
 choco install windsurf --force -y
 choco install gitkraken --force -y
 choco install rufus --force -y
-hoco install mremoteng --force -y
+choco install mremoteng --force -y
 choco install thunderbird --force -y
 choco install burp-suite-free-edition --force -y
 choco install wireshark --force -y
