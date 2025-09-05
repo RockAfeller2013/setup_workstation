@@ -90,10 +90,13 @@ $tasks = @(
     "\Microsoft\Windows\Windows Error Reporting\QueueReporting"
 )
 foreach ($t in $tasks) {
-    if (schtasks /Query /TN $t 2>$null) {
+    schtasks /Query /TN $t 2>$null | Out-Null
+    if ($LASTEXITCODE -eq 0) {
         schtasks /Change /TN $t /Disable | Out-Null
     }
 }
+
+   
 Write-Output "Disable Telmenty"
 
 # Adapted from http://stackoverflow.com/a/29571064/18475
