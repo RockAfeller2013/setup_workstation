@@ -72,11 +72,26 @@ choco install gimp --force -y
 
 <#
 
-choco install thunderbird --force -y
-choco install insomnia-rest-api-client --force -y
 choco install nvidia-broadcast --force -y
+choco install docker-desktop --force -y
+choco install sysinternals --force -y
+choco install awscli --force -y
+choco install azure-cli --force -y
+choco install kubernetes-cli --force -y
+choco install gcp-cli --force -y
+choco install clipjump --force -y
+choco install x64dbg.portable --force -y
+choco install ollydbg --force -y
+choco install cursoride --force -y
+choco install claude --force -y
+choco install warp-terminal --force -y
+choco install windsurf --force -y
+
+
+
+choco install insomnia-rest-api-client --force -y
+choco install thunderbird --force -y
 choco install gitkraken --force -y
-# choco install docker-desktop --force -y
 choco install rufus --force -y
 choco install python --force -y
 # choco install mremoteng --force -y
@@ -86,28 +101,13 @@ choco install vscode-insiders --force -y
 choco install openjdk --force -y
 choco install visualstudio2019community --force -y
 choco install neovim --force -y
-
 choco install notepadplusplus --force -y
-choco install sysinternals --force -y
 choco install powershell-core --force -y
 
 choco install f.lux --force -y
-choco install clipjump --force -y
-
-choco install awscli --force -y
-choco install azure-cli --force -y
-choco install kubernetes-cli --force -y
-choco install gcp-cli --force -y
 
 
-choco install x64dbg.portable --force -y
-choco install ollydbg --force -y
 
-choco install cursoride --force -y
-
-choco install claude --force -y
-choco install warp-terminal --force -y
-choco install windsurf --force -y
 choco install pycharm-community --force -y
 choco install pycharm-edu --force -y
 choco install pycharm --force -y
