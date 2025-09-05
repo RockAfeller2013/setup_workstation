@@ -115,3 +115,4 @@ choco install jetbrains-toolbox --force -y
 
 # Manual Install
 # - https://folge.me/#download
+# - Anaconda
