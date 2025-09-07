@@ -5,7 +5,7 @@ This is my Windows 11 Development environment for Vibe coding, I call it Homage,
 
 ## Windows 11 for Vibe Codeing
 
-- This is my SOE ( Standard Operating Enviornment) for Windowns 11, that can be built on Proxmox. I use this as a the base for my primary Windows Vine Code Development environment and testing.
+- This is my SOE ( Standard Operating Enviornment) for Windowns 11, that can be built on Proxmox. I use this as a the base for my primary Windows Vibe Code Development environment and testing.
 
 
 ### Features 
