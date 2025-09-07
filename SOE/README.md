@@ -2,7 +2,7 @@
 
 This is my Windows 11 development environment for Vibe coding, which I call Homage, in honor of [Omarchy](https://omarchy.org/). It even includes US DoD Windows 11 STIG security and a lot of other tweaks. I also have a Proxmox helper script to set up Omarchy as well! A true Viber code environment with Windows, Linux, and macOS all at once. Here comes a Salesforce clone, Lez Go!
 
-I plan to put this behind a secure firewall/DMZ with everything configured so I can invite other developers via Parsec.app without them being able to access or steal any code. I can also access this remotely and continue my Vibe coding adventures from my Mac laptop. THe reason for this, I do am interested in allot of different things and some of them only run on specific operating systems, so this, why, I have virtulized, Linux, Windows, MacOS and even iOS for testing. I am running all of this on a single worksttion, nowdays CPU, and M.2 is so fast and cheap. 
+I plan to put this behind a secure firewall/DMZ with everything configured so I can invite other developers via Parsec.app without them being able to access or steal any code. I can also access this remotely and continue my Vibe coding adventures from my Mac laptop. THe reason for this, I do am interested in allot of different things and some of them only run on specific operating systems, so this, why, I have virtulized, Linux, Windows, MacOS and even iOS for testing. I am running all of this on a single workstation, nowdays CPU, and M.2 is so fast and cheap. I have about 20 machines all at once and don't even have any performacne issues. cray cray.
 
 ## Windows 11 for Vibe Codeing
 
