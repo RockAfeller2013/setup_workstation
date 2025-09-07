@@ -25,6 +25,7 @@
 - Manaually install NVIDIA Drivers
 | https://us.download.nvidia.com/Windows/581.15/581.15-desktop-win10-win11-64bit-international-dch-whql.exe"
 | https://us.download.nvidia.com/nvapp/client/11.0.5.245/NVIDIA_app_v11.0.5.245.exe"
+- Run driveinstall.ps1 to connect z: to NAS
 
 
 ## Manual Configs
