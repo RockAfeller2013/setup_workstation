@@ -1,13 +1,7 @@
 # Homage - Automated - Microsoft Windows 11 - SOE / Template for Proxmox
 
- _                                      
-| |__    ___   _ __ ___    __ _   __ _    ___  
-| '_ \  / _ \ | '_ ` _ \  / _` | / _` |  / _ \ 
-| | | || (_) || | | | | || (_| || (_| | |  __/ 
-|_| |_| \___/ |_| |_| |_| \__,_| \__, |  \___|   
-                                  |___/ 
 
-This is my Windows 11 Development environment for Vibe coding, I call it Homage, in honour of https://omarchy.org/, it even includes US DOD Windows 11 STIG Secuirty and allot of other tweaks. I also have a Proxmox Helper scroipt to setup https://omarchy.org/ as well!, a true Viber code has Windows, Linux and a Mac OS all at once.. Here comes a Salesforce clone! Lez Go!, I play to put this behind a secure firewall/dmz with everything setup, so that i can invite other developers via Parsec.app and they can't take any code!
+This is my Windows 11 Development environment for Vibe coding, I call it Homage, in honour of https://omarchy.org/, it even includes US DOD Windows 11 STIG Secuirty and allot of other tweaks. I also have a Proxmox Helper scroipt to setup https://omarchy.org/ as well!, a true Viber code has Windows, Linux and a Mac OS all at once.. Here comes a Salesforce clone! Lez Go!, I play to put this behind a secure firewall/dmz with everything setup, so that i can invite other developers via Parsec.app and they can't take any code! I can access this remotley and continue my Vibe Coding adventures, from my Mac Laptop.
 
 ## Windows 11 for Vibe Codeing
 
