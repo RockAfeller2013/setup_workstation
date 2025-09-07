@@ -85,14 +85,17 @@ choco install burp-suite-free-edition --force -y
 choco install wireshark --force -y
 choco install open-shell -force -y
 
-choco install winmerge
-choco install ccleaner
-choco install audacity
-krita
-inkspace
-WizTree
-choco install sharex
+choco install winmerge -force -y
+choco install ccleaner -force -y
+choco install audacity -force -y
+choco install sharex -force -y
+choco install krita --version=5.2.1 -force -y
+choco install obs-studio -force -y
+choco install wiztree -force -y
+
+
 <#
+inkspace
 choco install nvidia-broadcast --force -y
 choco install docker-desktop --force -y
 
