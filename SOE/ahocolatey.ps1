@@ -83,18 +83,19 @@ choco install mremoteng --force -y
 choco install thunderbird --force -y
 choco install burp-suite-free-edition --force -y
 choco install wireshark --force -y
-choco install open-shell -force -y
+choco install open-shell --force -y
 
-choco install winmerge -force -y
-choco install ccleaner -force -y
-choco install audacity -force -y
-choco install sharex -force -y
-choco install krita --version=5.2.1 -force -y
-choco install obs-studio -force -y
-choco install wiztree -force -y
+choco install winmerge --force -y
+choco install ccleaner --force -y
+choco install audacity --force -y
+choco install sharex --force -y
+choco install krita --force -y
+choco install obs-studio --force -y
+choco install wiztree --force -y
+choco install blender
 
 
-<#
+<# 
 inkspace
 choco install nvidia-broadcast --force -y
 choco install docker-desktop --force -y
@@ -137,3 +138,4 @@ Start-Process -FilePath $installer -ArgumentList "/S", "/InstallationType=JustMe
 # - https://folge.me/#download
 # - Anaconda
 # - QT
+# - DaVinci Resolve logo
