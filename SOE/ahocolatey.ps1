@@ -139,3 +139,7 @@ Start-Process -FilePath $installer -ArgumentList "/S", "/InstallationType=JustMe
 # - Anaconda
 # - QT
 # - DaVinci Resolve logo
+OpenFrameworks
+Cinder
+https://primer.dynamobim.org/
+https://www.grasshopper3d.com/
