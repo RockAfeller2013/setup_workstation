@@ -148,4 +148,4 @@ Start-Process -FilePath $installer -ArgumentList "/S", "/InstallationType=JustMe
 #mixx
 #vvvv
 #touch desginer
-Lazygit
+
