@@ -143,3 +143,8 @@ OpenFrameworks
 Cinder
 https://primer.dynamobim.org/
 https://www.grasshopper3d.com/
+supercolider
+mixx
+vvvv
+touch desginer
+Lazygit
