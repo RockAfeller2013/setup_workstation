@@ -92,7 +92,8 @@ choco install sharex --force -y
 choco install krita --force -y
 choco install obs-studio --force -y
 choco install wiztree --force -y
-choco install blender
+choco install blender --force -y
+choco install lazygit --force -y
 
 
 <# 
@@ -139,12 +140,12 @@ Start-Process -FilePath $installer -ArgumentList "/S", "/InstallationType=JustMe
 # - Anaconda
 # - QT
 # - DaVinci Resolve logo
-OpenFrameworks
-Cinder
-https://primer.dynamobim.org/
-https://www.grasshopper3d.com/
-supercolider
-mixx
-vvvv
-touch desginer
+#OpenFrameworks
+#Cinder
+#https://primer.dynamobim.org/
+#https://www.grasshopper3d.com/
+#supercolider
+#mixx
+#vvvv
+#touch desginer
 Lazygit
