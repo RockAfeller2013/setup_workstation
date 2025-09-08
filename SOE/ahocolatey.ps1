@@ -96,6 +96,7 @@ choco install blender --force -y
 choco install lazygit --force -y
 
 
+
 <# 
 inkspace
 choco install nvidia-broadcast --force -y
@@ -148,4 +149,6 @@ Start-Process -FilePath $installer -ArgumentList "/S", "/InstallationType=JustMe
 #mixx
 #vvvv
 #touch desginer
+# https://noiseandgraphics.wordpress.com/generative-art-tools/
+# https://neobrowser.ai/
 
