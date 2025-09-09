@@ -154,4 +154,6 @@ Start-Process -FilePath $installer -ArgumentList "/S", "/InstallationType=JustMe
 # Unreal Engine
 # ComfuyFLy
 # inkspace
+# https://openscad.org/libraries.html
+# https://www.freecad.org/features.php?lang=en
 
