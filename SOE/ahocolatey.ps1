@@ -98,7 +98,7 @@ choco install lazygit --force -y
 
 
 <# 
-inkspace
+
 choco install nvidia-broadcast --force -y
 choco install docker-desktop --force -y
 
@@ -151,4 +151,7 @@ Start-Process -FilePath $installer -ArgumentList "/S", "/InstallationType=JustMe
 #touch desginer
 # https://noiseandgraphics.wordpress.com/generative-art-tools/
 # https://neobrowser.ai/
+# Unreal Engine
+# ComfuyFLy
+# inkspace
 
