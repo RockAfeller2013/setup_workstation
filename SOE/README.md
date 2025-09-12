@@ -8,6 +8,11 @@ I plan to put this behind a secure firewall/DMZ with everything configured so I 
 
 This is my SOE (Standard Operating Environment) for Windows 11, which can be built on Proxmox. I use this as the base for my primary Windows Vibe code development environment and testing.
 
+## Download Windows 11 Enterprise ISO
+
+- https://massgrave.dev/windows_11_links
+- https://licendi.com/en/blog/download-windows-11-enterprise-iso-file/
+
 ### Features 
 
 - Proxmox Build Script - https://www.detectx.com.au/migrate-to-proxmon-ve/#Automated_Windows_Build
