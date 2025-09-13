@@ -23,7 +23,23 @@ This is my SOE (Standard Operating Environment) for Windows 11, which can be bui
 - https://www.microsoft.com/en-us/evalcenter/download-windows-server-2022
 - https://www.microsoft.com/en-us/evalcenter/download-windows-server-2019
 - https://www.microsoft.com/en-us/evalcenter/download-windows-server-2016
-  
+
+## Proxmox Windows Configuration and Setup
+
+1. CPU: host
+2. Start the VM: 
+3. Connect via noVNC or SPICE console
+4. Skip license 
+5. During Windows installation:
+   - When prompted for storage drivers, click 'Load driver'
+   - Browse to the VirtIO CD-ROM → D:\amd64\w11
+   - Select the 'Red Hat VirtIO SCSI controller' driver
+6. After installation:
+   - Install remaining VirtIO drivers from the virtio-win.iso
+   - Change display adapter to 'virtio-gpu' in VM hardware settings
+   - Install QEMU guest agent for better integration
+
+Note: Windows 11 requires TPM 2.0 and Secure Boot, which are both enabled in this configuration.
 ### Features 
 
 
