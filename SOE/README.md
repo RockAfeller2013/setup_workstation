@@ -36,6 +36,7 @@ This is my SOE (Standard Operating Environment) for Windows 11, which can be bui
    - Select the 'Red Hat VirtIO SCSI controller' driver
    - NETWORK ISSUES - https://learn.microsoft.com/en-us/answers/questions/2350856/set-up-windows-11-without-internet-oobebypassnro?forum=insider-all&referrer=answers
    - FN + SHIFT + F10
+   - oobe\bypassnro
 6. After installation:
    - Install remaining VirtIO drivers from the virtio-win.iso
    - Change display adapter to 'virtio-gpu' in VM hardware settings
