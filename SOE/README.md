@@ -10,6 +10,7 @@ This is my SOE (Standard Operating Environment) for Windows 11, which can be bui
 
 ## Download Windows 11 Enterprise ISO
 
+- Use this method to download the ISO - https://www.majorgeeks.com/content/page/how_to_download_the_latest_windows_10_iso_images_directly_in_google_chrome.html
 - https://massgrave.dev/windows_11_links
 - https://licendi.com/en/blog/download-windows-11-enterprise-iso-file/
 
