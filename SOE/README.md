@@ -10,22 +10,42 @@ This is my SOE (Standard Operating Environment) for Windows 11, which can be bui
 
 ## Download Windows 11 Enterprise ISO
 
-- Use this method to download the ISO - https://www.majorgeeks.com/content/page/how_to_download_the_latest_windows_10_iso_images_directly_in_google_chrome.html
+You have to download Windows 11 Entperise ISO from your https://my.visualstudio.com/, it works better and networking works, otherwise you need to do the following;
+
+### Workarond download
+
 - https://massgrave.dev/windows_11_links
 - https://licendi.com/en/blog/download-windows-11-enterprise-iso-file/
-- Windows VirtIO Drivers - https://pve.proxmox.com/wiki/Windows_VirtIO_Drivers#:~:text=download%20the%20latest%20stable
-- Windows 11 guest best practices - https://pve.proxmox.com/wiki/Windows_VirtIO_Drivers#:~:text=download%20the%20latest%20stable
-- Windows 2022 guest best practices - https://pve.proxmox.com/wiki/Windows_2022_guest_best_practices
 
 ### Download Windows 11 ISO - Offical
 
 - Open Google Chrome in Developer Mode, Change the Responsive to iPad Pro, then download the full ISO from - https://www.microsoft.com/en-au/software-download/windows11
+- Use this method to download the ISO - https://www.majorgeeks.com/content/page/how_to_download_the_latest_windows_10_iso_images_directly_in_google_chrome.html
 - https://www.microsoft.com/en-us/evalcenter/download-windows-server-2022
 - https://www.microsoft.com/en-us/evalcenter/download-windows-server-2019
 - https://www.microsoft.com/en-us/evalcenter/download-windows-server-2016
 
 ## Proxmox Windows Configuration and Setup
 
+- Windows VirtIO Drivers - https://pve.proxmox.com/wiki/Windows_VirtIO_Drivers#:~:text=download%20the%20latest%20stable
+- Windows 11 guest best practices - https://pve.proxmox.com/wiki/Windows_VirtIO_Drivers#:~:text=download%20the%20latest%20stable
+- Windows 2022 guest best practices - https://pve.proxmox.com/wiki/Windows_2022_guest_best_practices
+- How to install Win11 in Proxmox | Quick guide | And fix problems of network search - https://forum.proxmox.com/threads/how-to-install-win11-in-proxmox-quick-guide-and-fix-problems-of-network-search.136596/
+
+'''
+VM Configuration Requirements
+
+Processor: 1 gigahertz (GHz) or faster with 2 or more cores on a compatible 64-bit processor or system on a chip (SoC). 
+RAM: 4 GB or more. 
+Storage: A storage device with 64 GB or larger capacity. 
+System Firmware: Unified Extensible Firmware Interface (UEFI) and Secure Boot capable. 
+TPM: Trusted Platform Module (TPM) version 2.0. 
+Graphics Card: DirectX 12 compatible graphics / WDDM 2.x. 
+Internet Connection: An internet connection is necessary for updates, setup, and to utilize certain features. 
+Microsoft Account:
+
+
+'''
 1. CPU: host
 2. Start the VM: 
 3. Connect via noVNC or SPICE console
