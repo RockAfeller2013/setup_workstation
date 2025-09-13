@@ -15,6 +15,7 @@ This is my SOE (Standard Operating Environment) for Windows 11, which can be bui
 - https://licendi.com/en/blog/download-windows-11-enterprise-iso-file/
 - Windows VirtIO Drivers - https://pve.proxmox.com/wiki/Windows_VirtIO_Drivers#:~:text=download%20the%20latest%20stable
 - Windows 11 guest best practices - https://pve.proxmox.com/wiki/Windows_VirtIO_Drivers#:~:text=download%20the%20latest%20stable
+- Windows 2022 guest best practices - https://pve.proxmox.com/wiki/Windows_2022_guest_best_practices
 
 ### Download Windows 11 ISO - Offical
 
