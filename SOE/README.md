@@ -13,8 +13,12 @@ This is my SOE (Standard Operating Environment) for Windows 11, which can be bui
 - Use this method to download the ISO - https://www.majorgeeks.com/content/page/how_to_download_the_latest_windows_10_iso_images_directly_in_google_chrome.html
 - https://massgrave.dev/windows_11_links
 - https://licendi.com/en/blog/download-windows-11-enterprise-iso-file/
+- Windows VirtIO Drivers - https://pve.proxmox.com/wiki/Windows_VirtIO_Drivers#:~:text=download%20the%20latest%20stable
+- Windows 11 guest best practices - https://pve.proxmox.com/wiki/Windows_VirtIO_Drivers#:~:text=download%20the%20latest%20stable
+
 
 ### Features 
+
 
 - Proxmox Build Script - https://www.detectx.com.au/migrate-to-proxmon-ve/#Automated_Windows_Build
 - Install VirtIO Drivers - https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/latest-virtio/
@@ -39,12 +43,14 @@ This is my SOE (Standard Operating Environment) for Windows 11, which can be bui
 
 
 ## Manual Configs
+
 - Download and Run https://winhance.net/ Manualy 
 - Download and Run https://windhawk.net/mods
 - Select all and download and run -https://privacy.sexy/
 - Download and install https://ninite.com/
 
 #### Manual Install
+
 - Claude Code
 - Gemni
 - LM Studio (AUR)
@@ -54,5 +60,6 @@ This is my SOE (Standard Operating Environment) for Windows 11, which can be bui
 - OpenGPT
 
 #### Clone
+
 - sysprep /generalize /mode:vm /shutdown
 - Make into Proxmox Clone
