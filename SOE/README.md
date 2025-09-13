@@ -34,6 +34,8 @@ This is my SOE (Standard Operating Environment) for Windows 11, which can be bui
    - When prompted for storage drivers, click 'Load driver'
    - Browse to the VirtIO CD-ROM → D:\amd64\w11
    - Select the 'Red Hat VirtIO SCSI controller' driver
+   - NETWORK ISSUES - https://learn.microsoft.com/en-us/answers/questions/2350856/set-up-windows-11-without-internet-oobebypassnro?forum=insider-all&referrer=answers
+   - FN + SHIFT + F10
 6. After installation:
    - Install remaining VirtIO drivers from the virtio-win.iso
    - Change display adapter to 'virtio-gpu' in VM hardware settings
