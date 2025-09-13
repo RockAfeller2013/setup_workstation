@@ -16,7 +16,13 @@ This is my SOE (Standard Operating Environment) for Windows 11, which can be bui
 - Windows VirtIO Drivers - https://pve.proxmox.com/wiki/Windows_VirtIO_Drivers#:~:text=download%20the%20latest%20stable
 - Windows 11 guest best practices - https://pve.proxmox.com/wiki/Windows_VirtIO_Drivers#:~:text=download%20the%20latest%20stable
 
+### Download Windows 11 ISO - Offical
 
+- Open Google Chrome in Developer Mode, Change the Responsive to iPad Pro, then download the full ISO from - https://www.microsoft.com/en-au/software-download/windows11
+- https://www.microsoft.com/en-us/evalcenter/download-windows-server-2022
+- https://www.microsoft.com/en-us/evalcenter/download-windows-server-2019
+- https://www.microsoft.com/en-us/evalcenter/download-windows-server-2016
+  
 ### Features 
 
 
