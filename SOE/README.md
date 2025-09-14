@@ -149,6 +149,9 @@ pvesm status
 vzdump 100 --compress lzo --mode snapshot --dumpdir /mnt/pve/synology-backups/backup_Wind11SOE
 vzdump 100 --compress lzo --mode snapshot --storage synology-backups
 
+pvesm list synology-backups
+
+
 qm clone 100 101 --name vm101-clone
 qm template 100
 
