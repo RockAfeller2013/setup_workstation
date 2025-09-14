@@ -24,3 +24,6 @@ qm set 100 --agent enabled=1
 
 # Verify the configuration
 qm config 100
+
+# Change Boot order after build
+# qm set 100 --boot order='scsi0'
