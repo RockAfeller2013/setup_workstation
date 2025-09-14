@@ -31,6 +31,15 @@ You have to download Windows 11 Entperise ISO from your https://my.visualstudio.
 - Windows 11 guest best practices - https://pve.proxmox.com/wiki/Windows_VirtIO_Drivers#:~:text=download%20the%20latest%20stable
 - Windows 2022 guest best practices - https://pve.proxmox.com/wiki/Windows_2022_guest_best_practices
 - How to install Win11 in Proxmox | Quick guide | And fix problems of network search - https://forum.proxmox.com/threads/how-to-install-win11-in-proxmox-quick-guide-and-fix-problems-of-network-search.136596/
+- Paravirtualized Block Drivers for Windows - https://pve.proxmox.com/wiki/Paravirtualized_Block_Drivers_for_Windows
+- Windows 11 VM (Best Performance) - https://forum.proxmox.com/threads/windows-11-vm-best-performance.135614/
+- How to install Win11 in Proxmox | Quick guide | And fix problems of network search - https://forum.proxmox.com/threads/how-to-install-win11-in-proxmox-quick-guide-and-fix-problems-of-network-search.136596/
+
+VirtIO provides better performance in virtualized environments. SATA and Realtek work without extra drivers but add emulation overhead, which slows performance. VirtIO is purpose-built for VMs, so disk and network I/O are much faster. If you can install the drivers, the performance gain is worth it.
+- Automated Installation - https://pve.proxmox.com/wiki/Automated_Installation
+
+
+
 
 '''
 VM Configuration Requirements
