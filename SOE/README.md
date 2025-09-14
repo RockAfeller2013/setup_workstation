@@ -68,6 +68,7 @@ Microsoft Account:
    - oobe\bypassnro
    - dont enter password, setup one later for RDP
    - after login install drivers from D:\netkvm\win11\amd64
+   - Select - US Keyboard
 7. After installation:
    - Install remaining VirtIO drivers from the virtio-win.iso
    - Change display adapter to 'virtio-gpu' in VM hardware settings
