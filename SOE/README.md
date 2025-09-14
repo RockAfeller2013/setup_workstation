@@ -137,6 +137,17 @@ autologon
 - Select all and download and run -https://privacy.sexy/
 - Download and install https://ninite.com/
 
+- ## Clone, Backu, Templat
+  
+```
+pvesm status
+vzdump 100 --compress lzo --mode snapshot --dumpdir /mnt/pve/synology-backups/backup_VM100
+qm clone 100 101 --name vm101-clone
+qm template 100
+
+```
+
+
 
 #### Clone
 
