@@ -62,7 +62,7 @@ Microsoft Account:
 6. During Windows installation:
    - When prompted for storage drivers, click 'Load driver'
    - Browse to the VirtIO CD-ROM → D:\amd64\w11
-   - Select the 'Red Hat VirtIO SCSI controller' driver
+   - Select the 'Red Hat VirtIO SCSI controller' driver and Click Next 
    - NETWORK ISSUES - https://learn.microsoft.com/en-us/answers/questions/2350856/set-up-windows-11-without-internet-oobebypassnro?forum=insider-all&referrer=answers
    - FN + SHIFT + F10
    - oobe\bypassnro
