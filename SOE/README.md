@@ -66,6 +66,7 @@ Microsoft Account:
    - NETWORK ISSUES - https://learn.microsoft.com/en-us/answers/questions/2350856/set-up-windows-11-without-internet-oobebypassnro?forum=insider-all&referrer=answers
    - FN + SHIFT + F10
    - oobe\bypassnro
+   - OR you can Install the Drives and Select E:\I386
    - dont enter password, setup one later for RDP
    - after login install drivers from D:\netkvm\win11\amd64
    - Select - US Keyboard
