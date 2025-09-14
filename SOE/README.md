@@ -55,11 +55,11 @@ Microsoft Account:
 
 
 '''
-1. CPU: host
-2. Start the VM: 
-3. Connect via noVNC or SPICE console
-4. Skip license 
-5. During Windows installation:
+1. CPU: host: qm set <vmid> --cpu host - Required for WSL
+3. Start the VM: 
+4. Connect via noVNC or SPICE console
+5. Skip license 
+6. During Windows installation:
    - When prompted for storage drivers, click 'Load driver'
    - Browse to the VirtIO CD-ROM → D:\amd64\w11
    - Select the 'Red Hat VirtIO SCSI controller' driver
@@ -68,7 +68,7 @@ Microsoft Account:
    - oobe\bypassnro
    - dont enter password, setup one later for RDP
    - after login install drivers from D:\netkvm\win11\amd64
-6. After installation:
+7. After installation:
    - Install remaining VirtIO drivers from the virtio-win.iso
    - Change display adapter to 'virtio-gpu' in VM hardware settings
    - Install QEMU guest agent for better integration
