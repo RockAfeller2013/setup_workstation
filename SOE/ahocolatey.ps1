@@ -47,6 +47,7 @@ choco install bginfo --force -y
 choco install 7zip.install --force -y
 choco install foxitreader --force -y
 choco install postman --force -y
+choco install lazygit --force -y
 
 choco install putty --force -y
 choco install filezilla --force -y
