@@ -118,6 +118,9 @@ choco install pycharm --force -y
 choco install jetbrains-toolbox --force -y
 #>
 
+# Install Powershell
+winget search Microsoft.PowerShell
+
 ## install UV
 irm https://astral.sh/uv/install.ps1 | iex
 
