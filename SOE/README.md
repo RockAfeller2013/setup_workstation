@@ -87,6 +87,7 @@ Note: Windows 11 requires TPM 2.0 and Secure Boot, which are both enabled in thi
 - Add to local administrators; net localgroup Administrators "admin" /add
 - Enable RDP; # Single command to enable RDP (Windows 8/10/11, Server 2012+)
 Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server' -Name "fDenyTSConnections" -Value 0; Enable-NetFirewallRule -DisplayGroup "Remote Desktop"
+- Configuration; powershell -NoProfile -ExecutionPolicy Bypass -Command "& {Invoke-Expression (Invoke-WebRequest 'https://raw.githubusercontent.com/RockAfeller2013/setup_workstation/refs/heads/main/SOE/config.ps1').Content}"
 - Disable Firewall
 - Enable Pweroshell execution ;# Set execution policy for all scopes
 Set-ExecutionPolicy Unrestricted -Scope LocalMachine -Force
@@ -104,7 +105,8 @@ Set-ExecutionPolicy Unrestricted -Scope Process -Force
 - Autologin; powershell -NoProfile -ExecutionPolicy Bypass -Command "& {Invoke-Expression (Invoke-WebRequest 'https://github.com/RockAfeller2013/setup_workstation/blob/main/SOE/autologin.ps1').Content}" 
 - Services; powershell -NoProfile -ExecutionPolicy Bypass -Command "& {Invoke-Expression (Invoke-WebRequest 'https://raw.githubusercontent.com/RockAfeller2013/setup_workstation/refs/heads/main/SOE/services.ps1').Content}" 
 - Setup Icons; powershell -NoProfile -ExecutionPolicy Bypass -Command "& {Invoke-Expression (Invoke-WebRequest 'https://raw.githubusercontent.com/RockAfeller2013/setup_workstation/refs/heads/main/SOE/setupicons.ps1').Content}"
-- Configuration; powershell -NoProfile -ExecutionPolicy Bypass -Command "& {Invoke-Expression (Invoke-WebRequest 'https://raw.githubusercontent.com/RockAfeller2013/setup_workstation/refs/heads/main/SOE/config.ps1').Content}"
+
+### Setup NVidia GPU Passthru
 - Run the setup-vfio.gpu.sh on proxmox (need to update VM ID), then reboot proxmox
 - Run the Nvidia Driver installer; powershell -NoProfile -ExecutionPolicy Bypass -Command "& {Invoke-Expression (Invoke-WebRequest 'https://raw.githubusercontent.com/RockAfeller2013/setup_workstation/refs/heads/main/SOE/driverinstall.ps1').Content}"
 - Manaually install NVIDIA Drivers
