@@ -133,15 +133,6 @@ Set-ExecutionPolicy Unrestricted -Scope Process -Force
 - Select all and download and run -https://privacy.sexy/
 - Download and install https://ninite.com/
 
-#### Manual Install
-
-- Claude Code
-- Gemni
-- LM Studio (AUR)
-- Ollama
-- Crush
-- Opencode
-- OpenGPT
 
 #### Clone
 
