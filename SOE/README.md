@@ -70,6 +70,7 @@ Microsoft Account:
    - dont enter password, setup one later for RDP
    - after login install drivers from D:\netkvm\win11\amd64
    - Select - US Keyboard
+   - If you install the NIC, you will need to try and skip the Microsoft Account creation, atm, F10 and start ms-cxh:localonly, doesnt work! so FFS
 7. After installation:
    - Install remaining VirtIO drivers from the virtio-win.iso
    - Change display adapter to 'virtio-gpu' in VM hardware settings
