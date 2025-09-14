@@ -137,7 +137,12 @@ autologon
 - Select all and download and run -https://privacy.sexy/
 - Download and install https://ninite.com/
 
-- ## Clone, Backu, Templat
+## SYSPREP
+```
+sysprep /generalize /mode:vm /shutdown
+```
+
+## Clone, Backu, Templat
   
 ```
 pvesm status
@@ -149,7 +154,4 @@ qm template 100
 
 
 
-#### Clone
 
-- sysprep /generalize /mode:vm /shutdown
-- Make into Proxmox Clone
