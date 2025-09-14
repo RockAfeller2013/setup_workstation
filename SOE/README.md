@@ -71,6 +71,7 @@ Microsoft Account:
    - after login install drivers from D:\netkvm\win11\amd64
    - Select - US Keyboard
    - If you install the NIC, you will need to try and skip the Microsoft Account creation, atm, F10 and start ms-cxh:localonly, doesnt work! so FFS
+   - Don't set a Password for the account a it will ask for allot of stupid questions
 7. After installation:
    - Install remaining VirtIO drivers from the virtio-win.iso
    - Change display adapter to 'virtio-gpu' in VM hardware settings
