@@ -79,6 +79,16 @@ Note: Windows 11 requires TPM 2.0 and Secure Boot, which are both enabled in thi
 
 - Proxmox Build Script - https://www.detectx.com.au/migrate-to-proxmon-ve/#Automated_Windows_Build
 - Install VirtIO Drivers - https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/latest-virtio/
+- Set a Password; net user "admin" "P@ssw0rd123" /expires:never
+- Add to local administrators; net localgroup Administrators "admin" /add
+- Enable RDP; # Single command to enable RDP (Windows 8/10/11, Server 2012+)
+Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server' -Name "fDenyTSConnections" -Value 0; Enable-NetFirewallRule -DisplayGroup "Remote Desktop"
+- Disable Firewall
+- Enable Pweroshell execution ;# Set execution policy for all scopes
+Set-ExecutionPolicy Unrestricted -Scope LocalMachine -Force
+Set-ExecutionPolicy Unrestricted -Scope CurrentUser -Force
+Set-ExecutionPolicy Unrestricted -Scope Process -Force
+- 
 - Disable Defender; powershell -NoProfile -ExecutionPolicy Bypass -Command "& {Invoke-Expression (Invoke-WebRequest 'https://raw.githubusercontent.com/RockAfeller2013/setup_workstation/refs/heads/main/SOE/DefenderDisable.ps1').Content}" 
 - Install Apps; powershell -NoProfile -ExecutionPolicy Bypass -Command "& {Invoke-Expression (Invoke-WebRequest 'https://raw.githubusercontent.com/RockAfeller2013/setup_workstation/main/SOE/ahocolatey.ps1').Content}"
 - Setup BIGINFO; powershell -NoProfile -ExecutionPolicy Bypass -Command "& {Invoke-Expression (Invoke-WebRequest 'https://raw.githubusercontent.com/RockAfeller2013/setup_workstation/refs/heads/main/SOE/bginfo.ps1').Content}"
