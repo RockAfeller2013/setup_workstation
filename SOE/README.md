@@ -142,13 +142,19 @@ autologon
 sysprep /generalize /mode:vm /shutdown
 ```
 
-## Clone, Backu, Templat
+## Clone, Backup, Templat
   
 ```
 pvesm status
-vzdump 100 --compress lzo --mode snapshot --dumpdir /mnt/pve/synology-backups/backup_VM100
+vzdump 100 --compress lzo --mode snapshot --dumpdir /mnt/pve/synology-backups/backup_Wind11SOE
 qm clone 100 101 --name vm101-clone
 qm template 100
+
+```
+
+## Test Recovery
+```
+vzdump --restore /mnt/pve/synology-backups/backup_Wind11SOE/vzdump-qemu-100-*.lzo 100
 
 ```
 
