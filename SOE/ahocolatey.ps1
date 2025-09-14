@@ -160,3 +160,13 @@ Start-Process -FilePath $installer -ArgumentList "/S", "/InstallationType=JustMe
 # https://openscad.org/libraries.html
 # https://www.freecad.org/features.php?lang=en
 
+#### Manual Install
+
+- Claude Code
+- Gemni
+- LM Studio (AUR)
+- Ollama
+- Crush
+- Opencode
+- OpenGPT
+
