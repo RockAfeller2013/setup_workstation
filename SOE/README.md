@@ -139,6 +139,15 @@ autologon
 
 ## SYSPREP
 ```
+# Check if reserved storage is in use
+Get-WindowsReservedStorageState
+
+# Disable reserved storage
+dism /online /Disable-ReservedStorage
+
+# Check for pending updates
+dism /online /cleanup-image /checkhealth
+
 C:\Windows\System32\Sysprep\sysprep.exe /generalize /mode:vm /shutdown
 notepad %windir%\system32\Sysprep\Panther\setupact.log
 
