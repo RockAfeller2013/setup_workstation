@@ -139,7 +139,8 @@ autologon
 
 ## SYSPREP
 ```
-sysprep /generalize /mode:vm /shutdown
+C:\Windows\System32\Sysprep\sysprep.exe /generalize /mode:vm /shutdown
+
 ```
 
 ## Clone, Backup, Templat
