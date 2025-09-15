@@ -140,6 +140,7 @@ autologon
 ## SYSPREP
 ```
 C:\Windows\System32\Sysprep\sysprep.exe /generalize /mode:vm /shutdown
+notepad %windir%\system32\Sysprep\Panther\setupact.log
 
 ```
 
