@@ -139,6 +139,9 @@ autologon
 
 ## SYSPREP
 ```
+
+cscript c:\windows\system32\slmgr.vbs -rearm
+
 # Check if reserved storage is in use
 Get-WindowsReservedStorageState
 
