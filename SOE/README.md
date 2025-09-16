@@ -4,6 +4,8 @@ This is my Windows 11 development environment for Vibe coding, which I call Homa
 
 I plan to put this behind a secure firewall/DMZ with everything configured so I can invite other developers via Parsec.app without them being able to access or steal any code. I can also access this remotely and continue my Vibe coding adventures from my Mac laptop. THe reason for this, I do am interested in allot of different things and some of them only run on specific operating systems, so this, why, I have virtulized, Linux, Windows, MacOS and even iOS for testing. I am running all of this on a single workstation, nowdays CPU, and M.2 is so fast and cheap. I have about 20 machines all at once and don't even have any performacne issues. cray cray.
 
+# DO NOT INSTALL WLS or Hyper-V on Proxmox Windows VM, it Breaks it.
+
 ## Windows 11 for Vibe Codeing
 
 This is my SOE (Standard Operating Environment) for Windows 11, which can be built on Proxmox. I use this as the base for my primary Windows Vibe code development environment and testing.
