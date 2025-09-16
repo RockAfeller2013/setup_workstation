@@ -1,4 +1,7 @@
-I dont need WSL, I can run a seperate Docker with Linux installed
+# Dont need WSL, I can run a seperate Docker with Linux installed
+
+Disable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+Restart-Computer
 
 1. Run a Real Linux Environment Natively on Windows
 This is the core reason. You get:
