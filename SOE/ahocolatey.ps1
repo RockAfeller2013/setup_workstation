@@ -160,6 +160,8 @@ Start-Process -FilePath $installer -ArgumentList "/S", "/InstallationType=JustMe
 # inkspace
 # https://openscad.org/libraries.html
 # https://www.freecad.org/features.php?lang=en
+# Rolobox
+# GoDot
 
 #### Manual Install
 
@@ -172,4 +174,5 @@ Start-Process -FilePath $installer -ArgumentList "/S", "/InstallationType=JustMe
 - OpenGPT
 - https://kdenlive.org/
 - https://godotengine.org/
+- Obsidian
 
