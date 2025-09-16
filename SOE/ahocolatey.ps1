@@ -170,4 +170,6 @@ Start-Process -FilePath $installer -ArgumentList "/S", "/InstallationType=JustMe
 - Crush
 - Opencode
 - OpenGPT
+- https://kdenlive.org/
+- https://godotengine.org/
 
