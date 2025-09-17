@@ -173,6 +173,7 @@ Start-Process -FilePath $installer -ArgumentList "/S", "/InstallationType=JustMe
 - Opencode
 - OpenGPT
 - https://kdenlive.org/
-- https://godotengine.org/
+- https://godotengin
+# o3dee.org/
 - Obsidian
 
