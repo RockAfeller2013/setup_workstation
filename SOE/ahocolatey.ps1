@@ -176,4 +176,5 @@ Start-Process -FilePath $installer -ArgumentList "/S", "/InstallationType=JustMe
 - https://godotengin
 # o3dee.org/
 - Obsidian
+- https://freetubeapp.io/#download
 
