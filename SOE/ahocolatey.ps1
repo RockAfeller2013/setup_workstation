@@ -177,4 +177,5 @@ Start-Process -FilePath $installer -ArgumentList "/S", "/InstallationType=JustMe
 # o3dee.org/
 - Obsidian
 - https://freetubeapp.io/#download
-
+- freecad
+- https://docs.isaacsim.omniverse.nvidia.com/5.0.0/installation/install_python.html
