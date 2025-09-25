@@ -64,6 +64,8 @@ choco install git --force -y
 
 choco install cmder --force -y
 choco install vscode --force -y
+choco install pycharm-community
+
 choco install libreoffice-fresh --force -y
 choco install gimp --force -y
 
