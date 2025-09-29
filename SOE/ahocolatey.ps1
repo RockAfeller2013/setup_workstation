@@ -181,3 +181,7 @@ Start-Process -FilePath $installer -ArgumentList "/S", "/InstallationType=JustMe
 - https://freetubeapp.io/#download
 - freecad
 - https://docs.isaacsim.omniverse.nvidia.com/5.0.0/installation/install_python.html
+
+- Minecrapft
+- Roloblox
+- Unreal
