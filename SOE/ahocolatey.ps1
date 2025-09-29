@@ -184,4 +184,6 @@ Start-Process -FilePath $installer -ArgumentList "/S", "/InstallationType=JustMe
 
 - Minecrapft
 - Roloblox
+
+- PHP Storm
 - Unreal
