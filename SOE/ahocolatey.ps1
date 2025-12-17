@@ -119,6 +119,7 @@ choco install pycharm-community --force -y
 choco install pycharm-edu --force -y
 choco install pycharm --force -y
 choco install jetbrains-toolbox --force -y
+choco install opencode --force -y
 #>
 
 # Install Powershell
