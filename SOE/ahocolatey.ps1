@@ -97,7 +97,7 @@ choco install obs-studio --force -y
 choco install wiztree --force -y
 choco install blender --force -y
 choco install lazygit --force -y
-
+choco install handbrake --force -y
 
 
 <# 
