@@ -166,6 +166,9 @@ Start-Process -FilePath $installer -ArgumentList "/S", "/InstallationType=JustMe
 # Rolobox
 # GoDot
 
+## https://christitus.com/winutil-in-2026/
+irm christitus.com/win | iex
+
 #### Manual Install
 
 - Claude Code
